@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1t2-l7-yzn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ztb-E2-Sr3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -18,8 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-te-yTN">
-                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJW-ut-e4R">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <color key="backgroundColor" red="0.37931177770000002" green="0.33957675910000001" blue="0.026732627419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="AnG-KK-awV"/>
+                                            <constraint firstAttribute="width" constant="50" id="Sth-bf-gyJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="list.triangle" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color systemColor="labelColor"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="openMenuButton" destination="1t2-l7-yzn" eventType="touchUpInside" id="jR1-Lr-Zwa"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FQ4-pL-dDY" userLabel="Stack View Balance">
                                         <rect key="frame" x="0.0" y="38" width="414" height="42"/>
                                         <subviews>
@@ -53,24 +74,6 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJW-ut-e4R">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
-                                        <color key="backgroundColor" red="0.37931177770000002" green="0.33957675910000001" blue="0.026732627419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="AnG-KK-awV"/>
-                                            <constraint firstAttribute="width" constant="50" id="Sth-bf-gyJ"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="list.triangle" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
-                                                <hierarchicalColors>
-                                                    <color systemColor="labelColor"/>
-                                                    <color systemColor="secondaryLabelColor"/>
-                                                    <color systemColor="tertiaryLabelColor"/>
-                                                </hierarchicalColors>
-                                            </imageReference>
-                                        </buttonConfiguration>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="82z-P2-LNQ">
                                         <rect key="frame" x="0.0" y="95" width="414" height="50"/>
                                         <subviews>
@@ -169,7 +172,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ALw-e9-F76" userLabel="Stack View Button">
-                                <rect key="frame" x="0.0" y="194" width="414" height="52"/>
+                                <rect key="frame" x="0.0" y="238" width="414" height="52"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyf-Je-XTj">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="52"/>
@@ -328,10 +331,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Tqh-B1-hEz" userLabel="Stack View TableInfo">
-                                <rect key="frame" x="0.0" y="246" width="414" height="616"/>
+                                <rect key="frame" x="0.0" y="290" width="414" height="572"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cxF-U1-JSl">
-                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="616"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="572"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <viewLayoutGuide key="contentLayoutGuide" id="Ajn-pV-Sze"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="m6r-P7-lBQ"/>
@@ -341,7 +344,7 @@
                                         </connections>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BcC-Iu-ACY">
-                                        <rect key="frame" x="139.5" y="0.0" width="135" height="616"/>
+                                        <rect key="frame" x="139.5" y="0.0" width="135" height="572"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="1t2-l7-yzn" id="Egl-Yk-jUP"/>
@@ -349,7 +352,7 @@
                                         </connections>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NoA-I7-khl">
-                                        <rect key="frame" x="278.5" y="0.0" width="135.5" height="616"/>
+                                        <rect key="frame" x="278.5" y="0.0" width="135.5" height="572"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="1t2-l7-yzn" id="Lah-bh-jex"/>
@@ -376,15 +379,34 @@
                             <constraint firstItem="lO1-Lq-3c2" firstAttribute="trailing" secondItem="ALw-e9-F76" secondAttribute="trailing" id="y3t-NJ-IVM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="s7V-hC-rHh"/>
                     <connections>
-                        <outlet property="buttonExpence" destination="fjS-3n-obI" id="rAc-Jd-B04"/>
+                        <outlet property="buttonExpense" destination="fjS-3n-obI" id="rAc-Jd-B04"/>
                         <outlet property="buttonGain" destination="97I-RH-rw5" id="2yz-Ft-y0W"/>
                         <outlet property="tableViewAccounts" destination="cxF-U1-JSl" id="oBD-sQ-H07"/>
                         <outlet property="tableViewDate" destination="NoA-I7-khl" id="K4r-QG-CFJ"/>
-                        <outlet property="tableViewExpenceOrGain" destination="BcC-Iu-ACY" id="DSA-tP-RGu"/>
+                        <outlet property="tableViewExpenseOrGain" destination="BcC-Iu-ACY" id="DSA-tP-RGu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7B-uH-bVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="88.392857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ylj-rM-qsi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ztb-E2-Sr3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yHN-Ux-r01">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1t2-l7-yzn" kind="relationship" relationship="rootViewController" id="7of-mK-o06"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U59-Id-pmo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111.59420289855073" y="88.392857142857139"/>
         </scene>

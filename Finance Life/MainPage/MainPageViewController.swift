@@ -10,15 +10,17 @@
 import UIKit
 // MARK: View -
 protocol MainPageViewProtocol: AnyObject {
-    
+    func tableReloadDataExpenseOrGain()
+    func tableReloadDataAccounts()
+
 }
 
 class MainPageViewController: UIViewController {
     
     @IBOutlet private weak var tableViewAccounts: UITableView!
     @IBOutlet private weak var tableViewDate: UITableView!
-    @IBOutlet private weak var tableViewExpenceOrGain: UITableView!
-    @IBOutlet private weak var buttonExpence: UIButton!
+    @IBOutlet private weak var tableViewExpenseOrGain: UITableView!
+    @IBOutlet private weak var buttonExpense: UIButton!
     @IBOutlet private weak var buttonGain: UIButton!
     
     
@@ -30,6 +32,8 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.isHidden = true
         
         presenter.view = self
         presenter.viewDidLoad()
@@ -52,21 +56,42 @@ class MainPageViewController: UIViewController {
     }
     
     @IBAction private func pressButtonExpence() {
-        buttonExpence.isHidden = true
+        buttonExpense.isHidden = true
         buttonGain.isHidden = false
-        tableViewExpenceOrGain.reloadData()
+        tableViewExpenseOrGain.reloadData()
 
     }
     
     @IBAction private func pressButtonGain() {
         buttonGain.isHidden = true
-        buttonExpence.isHidden = false
-        tableViewExpenceOrGain.reloadData()
+        buttonExpense.isHidden = false
+        tableViewExpenseOrGain.reloadData()
+    }
+    
+    @IBAction private func openMenuButton() {
+        let storyboard = UIStoryboard(name: "MenuPage", bundle: Bundle.main)
+        guard let vcMenu = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as? MenuPageViewController else { return }
+        navigationController?.pushViewController(vcMenu, animated: true)
     }
     
 }
-
+// MARK: Extension -
 extension MainPageViewController: MainPageViewProtocol {
+    func tableReloadDataAccounts() {
+        tableViewAccounts.reloadData()
+    }
+    
+    func tableReloadDataExpenseOrGain() {
+        tableViewExpenseOrGain.reloadData()
+    }
+
+    
+    
+    
+    
+    
+    
+    
     
 }
 
@@ -85,7 +110,7 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.update(text: categoryName(for: indexPath), value: categoryValue(for: indexPath))
             return cell
-        case tableViewExpenceOrGain:
+        case tableViewExpenseOrGain:
             if buttonGain.isHidden == true {
             guard let cell = tableViewAccounts.dequeueReusableCell(withIdentifier: "MyCellExpence", for: indexPath) as? MyCellExpence else {
                 return UITableViewCell()
