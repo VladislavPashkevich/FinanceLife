@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5659E619275AC9660033BD42 /* MyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E617275AC9660033BD42 /* MyCellView.swift */; };
+		5659E61A275AC9660033BD42 /* MyCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659E618275AC9660033BD42 /* MyCellView.xib */; };
+		5659E61F275B7D080033BD42 /* MyCellExpence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E61E275B7D080033BD42 /* MyCellExpence.swift */; };
+		5659E621275B7D170033BD42 /* MyCellExpence.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659E620275B7D170033BD42 /* MyCellExpence.xib */; };
+		5659E629275B89370033BD42 /* MyCellGain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E627275B89370033BD42 /* MyCellGain.swift */; };
+		5659E62A275B89370033BD42 /* MyCellGain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659E628275B89370033BD42 /* MyCellGain.xib */; };
+		5659E62C275B8BDA0033BD42 /* MyCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E62B275B8BDA0033BD42 /* MyCellDate.swift */; };
+		5659E62E275B8BEF0033BD42 /* MyCellDate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659E62D275B8BEF0033BD42 /* MyCellDate.xib */; };
 		56D965C4275A71F4000E8832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965C3275A71F4000E8832 /* AppDelegate.swift */; };
 		56D965C6275A71F4000E8832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965C5275A71F4000E8832 /* SceneDelegate.swift */; };
 		56D965C8275A71F4000E8832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965C7275A71F4000E8832 /* ViewController.swift */; };
@@ -14,9 +22,22 @@
 		56D965CE275A71F4000E8832 /* Finance_Life.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56D965CC275A71F4000E8832 /* Finance_Life.xcdatamodeld */; };
 		56D965D0275A71F6000E8832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D965CF275A71F6000E8832 /* Assets.xcassets */; };
 		56D965D3275A71F6000E8832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D965D1275A71F6000E8832 /* LaunchScreen.storyboard */; };
+		56D965DE275A726F000E8832 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D965DB275A726F000E8832 /* MainPage.storyboard */; };
+		56D965DF275A726F000E8832 /* MainPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965DC275A726F000E8832 /* MainPagePresenter.swift */; };
+		56D965E0275A726F000E8832 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965DD275A726F000E8832 /* MainPageViewController.swift */; };
+		56D965E2275A7374000E8832 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965E1275A7374000E8832 /* CoreDataService.swift */; };
+		56D965E9275A73D5000E8832 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965E5275A73D5000E8832 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5659E617275AC9660033BD42 /* MyCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellView.swift; sourceTree = "<group>"; };
+		5659E618275AC9660033BD42 /* MyCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCellView.xib; sourceTree = "<group>"; };
+		5659E61E275B7D080033BD42 /* MyCellExpence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellExpence.swift; sourceTree = "<group>"; };
+		5659E620275B7D170033BD42 /* MyCellExpence.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCellExpence.xib; sourceTree = "<group>"; };
+		5659E627275B89370033BD42 /* MyCellGain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellGain.swift; sourceTree = "<group>"; };
+		5659E628275B89370033BD42 /* MyCellGain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCellGain.xib; sourceTree = "<group>"; };
+		5659E62B275B8BDA0033BD42 /* MyCellDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellDate.swift; sourceTree = "<group>"; };
+		5659E62D275B8BEF0033BD42 /* MyCellDate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCellDate.xib; sourceTree = "<group>"; };
 		56D965C0275A71F4000E8832 /* Finance Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finance Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D965C3275A71F4000E8832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D965C5275A71F4000E8832 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +47,11 @@
 		56D965CF275A71F6000E8832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56D965D2275A71F6000E8832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56D965D4275A71F6000E8832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D965DB275A726F000E8832 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
+		56D965DC275A726F000E8832 /* MainPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagePresenter.swift; sourceTree = "<group>"; };
+		56D965DD275A726F000E8832 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		56D965E1275A7374000E8832 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		56D965E5275A73D5000E8832 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +65,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5659E615275AC9660033BD42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5659E626275B89370033BD42 /* MyCellGain */,
+				5659E616275AC9660033BD42 /* MyCellAccounts */,
+				5659E61D275B7CC00033BD42 /* MyCellExpence */,
+				5659E61B275B7B120033BD42 /* MyCellDate */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5659E616275AC9660033BD42 /* MyCellAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				5659E617275AC9660033BD42 /* MyCellView.swift */,
+				5659E618275AC9660033BD42 /* MyCellView.xib */,
+			);
+			path = MyCellAccounts;
+			sourceTree = "<group>";
+		};
+		5659E61B275B7B120033BD42 /* MyCellDate */ = {
+			isa = PBXGroup;
+			children = (
+				5659E62B275B8BDA0033BD42 /* MyCellDate.swift */,
+				5659E62D275B8BEF0033BD42 /* MyCellDate.xib */,
+			);
+			path = MyCellDate;
+			sourceTree = "<group>";
+		};
+		5659E61D275B7CC00033BD42 /* MyCellExpence */ = {
+			isa = PBXGroup;
+			children = (
+				5659E61E275B7D080033BD42 /* MyCellExpence.swift */,
+				5659E620275B7D170033BD42 /* MyCellExpence.xib */,
+			);
+			path = MyCellExpence;
+			sourceTree = "<group>";
+		};
+		5659E626275B89370033BD42 /* MyCellGain */ = {
+			isa = PBXGroup;
+			children = (
+				5659E627275B89370033BD42 /* MyCellGain.swift */,
+				5659E628275B89370033BD42 /* MyCellGain.xib */,
+			);
+			path = MyCellGain;
+			sourceTree = "<group>";
+		};
 		56D965B7275A71F4000E8832 = {
 			isa = PBXGroup;
 			children = (
@@ -61,13 +134,43 @@
 				56D965C3275A71F4000E8832 /* AppDelegate.swift */,
 				56D965C5275A71F4000E8832 /* SceneDelegate.swift */,
 				56D965C7275A71F4000E8832 /* ViewController.swift */,
+				5659E615275AC9660033BD42 /* View */,
+				56D965EC275A7448000E8832 /* Services */,
 				56D965C9275A71F4000E8832 /* Main.storyboard */,
+				56D965DA275A722A000E8832 /* MainPage */,
 				56D965CF275A71F6000E8832 /* Assets.xcassets */,
 				56D965D1275A71F6000E8832 /* LaunchScreen.storyboard */,
 				56D965D4275A71F6000E8832 /* Info.plist */,
 				56D965CC275A71F4000E8832 /* Finance_Life.xcdatamodeld */,
+				56D965E3275A73D5000E8832 /* Extensions */,
 			);
 			path = "Finance Life";
+			sourceTree = "<group>";
+		};
+		56D965DA275A722A000E8832 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				56D965DB275A726F000E8832 /* MainPage.storyboard */,
+				56D965DC275A726F000E8832 /* MainPagePresenter.swift */,
+				56D965DD275A726F000E8832 /* MainPageViewController.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		56D965E3275A73D5000E8832 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				56D965E5275A73D5000E8832 /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		56D965EC275A7448000E8832 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				56D965E1275A7374000E8832 /* CoreDataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +231,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D965DE275A726F000E8832 /* MainPage.storyboard in Resources */,
 				56D965D3275A71F6000E8832 /* LaunchScreen.storyboard in Resources */,
 				56D965D0275A71F6000E8832 /* Assets.xcassets in Resources */,
+				5659E62E275B8BEF0033BD42 /* MyCellDate.xib in Resources */,
 				56D965CB275A71F4000E8832 /* Main.storyboard in Resources */,
+				5659E62A275B89370033BD42 /* MyCellGain.xib in Resources */,
+				5659E621275B7D170033BD42 /* MyCellExpence.xib in Resources */,
+				5659E61A275AC9660033BD42 /* MyCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +249,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D965E2275A7374000E8832 /* CoreDataService.swift in Sources */,
+				56D965E9275A73D5000E8832 /* View+Extensions.swift in Sources */,
 				56D965CE275A71F4000E8832 /* Finance_Life.xcdatamodeld in Sources */,
+				56D965DF275A726F000E8832 /* MainPagePresenter.swift in Sources */,
 				56D965C8275A71F4000E8832 /* ViewController.swift in Sources */,
+				5659E619275AC9660033BD42 /* MyCellView.swift in Sources */,
+				5659E61F275B7D080033BD42 /* MyCellExpence.swift in Sources */,
 				56D965C4275A71F4000E8832 /* AppDelegate.swift in Sources */,
+				56D965E0275A726F000E8832 /* MainPageViewController.swift in Sources */,
+				5659E629275B89370033BD42 /* MyCellGain.swift in Sources */,
 				56D965C6275A71F4000E8832 /* SceneDelegate.swift in Sources */,
+				5659E62C275B8BDA0033BD42 /* MyCellDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +414,7 @@
 				INFOPLIST_FILE = "Finance Life/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainPage;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -326,7 +442,7 @@
 				INFOPLIST_FILE = "Finance Life/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainPage;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
