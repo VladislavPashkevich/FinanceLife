@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="CollectionCellExpense" id="Wl8-7Z-vjC" customClass="CollectionCellExpense" customModule="Finance_Life" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hda-AQ-TB4">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkl-FC-ft2">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <color key="backgroundColor" red="1" green="0.065659366220000001" blue="0.02692510192" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                        <connections>
+                            <action selector="deleteExpense" destination="Wl8-7Z-vjC" eventType="touchUpInside" id="JHa-Ad-ge0"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" id="HcP-XY-g8B">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="HXh-Kh-w4d"/>
+                            <constraint firstAttribute="height" constant="100" id="OnC-bd-UMF"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расход" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4w-gV-6cS">
+                        <rect key="frame" x="0.0" y="5" width="100" height="50"/>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="75"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart.fill.badge.minus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bZ1-6N-CRe">
+                        <rect key="frame" x="30" y="55" width="41" height="40"/>
+                        <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="PCW-dK-gAo"/>
+                            <constraint firstAttribute="width" constant="40" id="ne9-9I-x5j"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="nkl-FC-ft2" secondAttribute="trailing" id="2wI-hS-03f"/>
+                    <constraint firstItem="HcP-XY-g8B" firstAttribute="centerX" secondItem="Hda-AQ-TB4" secondAttribute="centerX" id="4bP-OG-EKd"/>
+                    <constraint firstItem="nkl-FC-ft2" firstAttribute="leading" secondItem="Hda-AQ-TB4" secondAttribute="leading" id="Bdz-x7-pSe"/>
+                    <constraint firstItem="a4w-gV-6cS" firstAttribute="top" secondItem="Hda-AQ-TB4" secondAttribute="top" constant="5" id="Ebu-qu-L3o"/>
+                    <constraint firstAttribute="trailing" secondItem="a4w-gV-6cS" secondAttribute="trailing" id="JUr-Nx-VUx"/>
+                    <constraint firstItem="nkl-FC-ft2" firstAttribute="top" secondItem="Hda-AQ-TB4" secondAttribute="top" id="OVN-cd-MUx"/>
+                    <constraint firstAttribute="bottom" secondItem="nkl-FC-ft2" secondAttribute="bottom" id="Y6X-RY-z7x"/>
+                    <constraint firstItem="HcP-XY-g8B" firstAttribute="centerY" secondItem="Hda-AQ-TB4" secondAttribute="centerY" id="lWp-KE-OLc"/>
+                    <constraint firstItem="bZ1-6N-CRe" firstAttribute="centerX" secondItem="Hda-AQ-TB4" secondAttribute="centerX" id="toC-fo-ASH"/>
+                    <constraint firstItem="bZ1-6N-CRe" firstAttribute="top" secondItem="a4w-gV-6cS" secondAttribute="bottom" id="ueQ-Gz-4Eh"/>
+                    <constraint firstItem="a4w-gV-6cS" firstAttribute="leading" secondItem="Hda-AQ-TB4" secondAttribute="leading" id="vmb-0e-yvE"/>
+                    <constraint firstAttribute="bottom" secondItem="bZ1-6N-CRe" secondAttribute="bottom" constant="5" id="yjK-8y-KGf"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="254" height="104"/>
+            <connections>
+                <outlet property="ExpenseName" destination="a4w-gV-6cS" id="EKe-vY-fZP"/>
+                <outlet property="buttonDelete" destination="nkl-FC-ft2" id="ftg-to-L8e"/>
+            </connections>
+            <point key="canvasLocation" x="388.40579710144931" y="163.39285714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cart.fill.badge.minus" catalog="system" width="128" height="106"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

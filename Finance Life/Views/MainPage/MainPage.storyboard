@@ -158,6 +158,7 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.37931177772656832" green="0.33957675906525292" blue="0.026732627416320244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.37917834519999999" green="0.34009405970000001" blue="0.094034485520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="FQ4-pL-dDY" firstAttribute="top" secondItem="jJW-ut-e4R" secondAttribute="bottom" constant="8" id="18o-bq-SVd"/>
                                     <constraint firstAttribute="bottom" secondItem="82z-P2-LNQ" secondAttribute="bottom" constant="5" id="28s-nQ-mzR"/>
@@ -211,7 +212,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjS-3n-obI">
                                                 <rect key="frame" x="23" y="10" width="92" height="32"/>
-                                                <color key="backgroundColor" red="0.71704598448493262" green="0.14066508726992594" blue="0.069657438433821842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <buttonConfiguration key="configuration" style="plain" subtitle="" titleAlignment="automatic">
                                                     <attributedString key="attributedTitle">
@@ -364,7 +365,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lO1-Lq-3c2"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.37917834519999999" green="0.34009405970000001" blue="0.094034485520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="S9E-te-yTN" firstAttribute="trailing" secondItem="lO1-Lq-3c2" secondAttribute="trailing" id="2HI-dN-0Hi"/>
                             <constraint firstItem="Tqh-B1-hEz" firstAttribute="leading" secondItem="lO1-Lq-3c2" secondAttribute="leading" id="5aP-0W-5qg"/>
@@ -429,6 +430,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>

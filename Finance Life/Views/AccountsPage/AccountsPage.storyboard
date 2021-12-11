@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Accounts Page View Controller-->
+        <scene sceneID="30V-Oa-oJf">
+            <objects>
+                <viewController storyboardIdentifier="AccountsPageViewController" id="t4g-Qi-m8E" customClass="AccountsPageViewController" customModule="Finance_Life" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="reM-hR-rjn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhU-x7-rwe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счета" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xw9-VF-AJe">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="24"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="xw9-VF-AJe" firstAttribute="centerY" secondItem="lhU-x7-rwe" secondAttribute="centerY" id="9Vw-PT-twq"/>
+                                    <constraint firstAttribute="trailing" secondItem="xw9-VF-AJe" secondAttribute="trailing" id="JLV-QX-riQ"/>
+                                    <constraint firstItem="xw9-VF-AJe" firstAttribute="top" secondItem="lhU-x7-rwe" secondAttribute="top" constant="28" id="LHN-Lc-LKE"/>
+                                    <constraint firstItem="xw9-VF-AJe" firstAttribute="centerX" secondItem="lhU-x7-rwe" secondAttribute="centerX" id="Tdk-sM-LsO"/>
+                                    <constraint firstItem="xw9-VF-AJe" firstAttribute="leading" secondItem="lhU-x7-rwe" secondAttribute="leading" id="Zrd-sC-gtY"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTb-JH-Lc9">
+                                <rect key="frame" x="0.0" y="124" width="414" height="692"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="t4g-Qi-m8E" id="xcP-1x-TGt"/>
+                                    <outlet property="delegate" destination="t4g-Qi-m8E" id="a70-h3-PA9"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-LV-h3P">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w2-bP-laP">
+                                        <rect key="frame" x="100" y="5" width="214" height="30.5"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Добавить счет">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addNewAccount" destination="t4g-Qi-m8E" eventType="touchUpInside" id="gih-xf-dNL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5w2-bP-laP" firstAttribute="leading" secondItem="4S9-LV-h3P" secondAttribute="leading" constant="100" id="Kow-Ye-XFl"/>
+                                    <constraint firstItem="5w2-bP-laP" firstAttribute="top" secondItem="4S9-LV-h3P" secondAttribute="top" constant="5" id="T5Y-YN-MrT"/>
+                                    <constraint firstAttribute="trailing" secondItem="5w2-bP-laP" secondAttribute="trailing" constant="100" id="bB8-bK-Roi"/>
+                                    <constraint firstAttribute="height" constant="80" id="ra4-rA-l6s"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Добавьте счет" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lth-Ib-7bd">
+                                <rect key="frame" x="0.0" y="437" width="414" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="k8m-Zl-THk"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="4S9-LV-h3P" firstAttribute="top" secondItem="eTb-JH-Lc9" secondAttribute="bottom" id="2rY-vd-NkO"/>
+                            <constraint firstItem="k8m-Zl-THk" firstAttribute="trailing" secondItem="eTb-JH-Lc9" secondAttribute="trailing" id="7lL-8U-cW8"/>
+                            <constraint firstAttribute="bottom" secondItem="4S9-LV-h3P" secondAttribute="bottom" id="ILP-cf-5Jw"/>
+                            <constraint firstItem="lhU-x7-rwe" firstAttribute="top" secondItem="k8m-Zl-THk" secondAttribute="top" id="NFb-ov-Zja"/>
+                            <constraint firstItem="k8m-Zl-THk" firstAttribute="trailing" secondItem="4S9-LV-h3P" secondAttribute="trailing" id="PoV-fM-Jmm"/>
+                            <constraint firstItem="k8m-Zl-THk" firstAttribute="trailing" secondItem="lhU-x7-rwe" secondAttribute="trailing" id="Urx-sN-79m"/>
+                            <constraint firstItem="lhU-x7-rwe" firstAttribute="leading" secondItem="k8m-Zl-THk" secondAttribute="leading" id="VRd-sC-4Q7"/>
+                            <constraint firstItem="eTb-JH-Lc9" firstAttribute="top" secondItem="lhU-x7-rwe" secondAttribute="bottom" id="Zc1-mA-MZm"/>
+                            <constraint firstItem="eTb-JH-Lc9" firstAttribute="leading" secondItem="k8m-Zl-THk" secondAttribute="leading" id="a4E-lv-pO1"/>
+                            <constraint firstItem="4S9-LV-h3P" firstAttribute="leading" secondItem="k8m-Zl-THk" secondAttribute="leading" id="oHD-u5-P6r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelPlaceholder" destination="Lth-Ib-7bd" id="Wmh-Ri-euD"/>
+                        <outlet property="tableViewAccounts" destination="eTb-JH-Lc9" id="x33-Pt-bNn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJE-fB-wiv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

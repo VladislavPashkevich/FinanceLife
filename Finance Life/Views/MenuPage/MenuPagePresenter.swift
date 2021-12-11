@@ -26,36 +26,37 @@ class MenuPagePresenter: MenuPagePresenterProtocol {
 
     weak var view: MenuPageViewProtocol?
     
-    private let menuName: [String] = ["Статистика", "Счета", "Доходы", "Расходы"]
-
     func viewDidLoad() {
 
     }
     
     func nameOnMenu(for indexPath: IndexPath) -> String {
-        return menuName[indexPath.row]
+        return menuBar.allCases[indexPath.row].rawValue
     }
     
     func numberCellOnTableView() -> Int {
-        return menuName.count
+        return menuBar.allCases.count
     }
     
     func switchSelectCell(for indexPath: IndexPath) {
-        switch menuName[indexPath.row] {
-        case "Статистика":
+        switch menuBar.allCases[indexPath.row] {
+        case .Статистика:
             view?.showStatics()
-        case "Счета":
+        case .Счета:
             view?.showAccounts()
-        case "Доходы":
+        case .Доходы:
             view?.showGain()
-        case "Расходы":
+        case .Расходы:
             view?.showExpense()
-        default:
-            break
         }
-    
+        
     }
     
+}
+
+
+enum menuBar: String, CaseIterable {
+    case Статистика, Счета, Доходы, Расходы
 }
 
 

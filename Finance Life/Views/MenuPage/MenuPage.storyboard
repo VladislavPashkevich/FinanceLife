@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-QR-EIh">
                                 <rect key="frame" x="0.0" y="115" width="414" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="1t2-l7-yzn" id="jcN-HR-EQq"/>
                                     <outlet property="delegate" destination="1t2-l7-yzn" id="toP-wH-ciG"/>
@@ -48,7 +48,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96841138601303101" green="0.60269494010021252" blue="0.38164998802844891" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="dlr-d4-nFr" secondAttribute="bottom" constant="15" id="4gj-Gx-7pl"/>
                                     <constraint firstItem="5uF-jW-ivk" firstAttribute="leading" secondItem="dlr-d4-nFr" secondAttribute="trailing" constant="25" id="5a4-zw-h7f"/>
@@ -66,7 +66,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JrV-oV-YnO">
                                         <rect key="frame" x="301" y="10" width="73" height="61"/>
-                                        <color key="backgroundColor" red="0.96841138599999999" green="0.60269494010000002" blue="0.381649988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
@@ -83,7 +83,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96841138599999999" green="0.60269494010000002" blue="0.381649988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstItem="JrV-oV-YnO" firstAttribute="top" secondItem="57h-cz-YzL" secondAttribute="top" constant="10" id="But-Bs-2Tf"/>
                                     <constraint firstAttribute="bottom" secondItem="JrV-oV-YnO" secondAttribute="bottom" constant="10" id="HFM-72-pI6"/>
@@ -119,9 +119,6 @@
     </scenes>
     <resources>
         <image name="face.smiling.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

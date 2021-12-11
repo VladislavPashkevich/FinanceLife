@@ -68,7 +68,7 @@
                 <outlet property="textLabelName" destination="kwz-ls-ff0" id="C4l-2L-0kz"/>
                 <outlet property="textLabelValue" destination="wtN-GM-Ayn" id="G6n-PB-vHM"/>
             </connections>
-            <point key="canvasLocation" x="178.2608695652174" y="20.089285714285712"/>
+            <point key="canvasLocation" x="178.2608695652174" y="19.754464285714285"/>
         </tableViewCell>
     </objects>
     <resources>

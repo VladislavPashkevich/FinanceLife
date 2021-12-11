@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1t2-l7-yzn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Expenses Page View Controller-->
+        <scene sceneID="rpV-mr-Pav">
+            <objects>
+                <viewController storyboardIdentifier="ExpensesPageViewController" id="1t2-l7-yzn" customClass="ExpensesPageViewController" customModule="Finance_Life" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dHv-Ld-GZd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlg-Vf-POr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расходы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-iE-JH1">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="24"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SbQ-iE-JH1" secondAttribute="trailing" id="1db-6v-dQI"/>
+                                    <constraint firstItem="SbQ-iE-JH1" firstAttribute="top" secondItem="rlg-Vf-POr" secondAttribute="top" constant="28" id="7a2-y6-DoC"/>
+                                    <constraint firstItem="SbQ-iE-JH1" firstAttribute="centerX" secondItem="rlg-Vf-POr" secondAttribute="centerX" id="Bsr-eH-obe"/>
+                                    <constraint firstItem="SbQ-iE-JH1" firstAttribute="leading" secondItem="rlg-Vf-POr" secondAttribute="leading" id="huJ-MK-BNG"/>
+                                    <constraint firstItem="SbQ-iE-JH1" firstAttribute="centerY" secondItem="rlg-Vf-POr" secondAttribute="centerY" id="wCh-6u-xJW"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1I5-cJ-icV">
+                                <rect key="frame" x="0.0" y="124" width="414" height="692"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="uou-H7-ib5">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1t2-l7-yzn" id="mwU-c2-Kxy"/>
+                                    <outlet property="delegate" destination="1t2-l7-yzn" id="u2G-Di-dxj"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0I-Tf-upS">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1G-sX-BF1">
+                                        <rect key="frame" x="100" y="5" width="214" height="46.5"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Добавить категорию расходов">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonAddExpense" destination="1t2-l7-yzn" eventType="touchUpInside" id="041-0L-JTK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="U1G-sX-BF1" secondAttribute="trailing" constant="100" id="GOo-RN-H6p"/>
+                                    <constraint firstItem="U1G-sX-BF1" firstAttribute="top" secondItem="v0I-Tf-upS" secondAttribute="top" constant="5" id="Kl2-or-A8Q"/>
+                                    <constraint firstItem="U1G-sX-BF1" firstAttribute="leading" secondItem="v0I-Tf-upS" secondAttribute="leading" constant="100" id="biK-Y2-wlb"/>
+                                    <constraint firstAttribute="height" constant="80" id="cDA-y0-6II"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Добавьте категорию расходов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuj-tb-PPy">
+                                <rect key="frame" x="0.0" y="437" width="414" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lO1-Lq-3c2"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="lO1-Lq-3c2" firstAttribute="trailing" secondItem="v0I-Tf-upS" secondAttribute="trailing" id="7yE-44-asa"/>
+                            <constraint firstItem="1I5-cJ-icV" firstAttribute="top" secondItem="rlg-Vf-POr" secondAttribute="bottom" id="9QU-AZ-554"/>
+                            <constraint firstAttribute="bottom" secondItem="v0I-Tf-upS" secondAttribute="bottom" id="Aau-zL-8f7"/>
+                            <constraint firstItem="v0I-Tf-upS" firstAttribute="top" secondItem="1I5-cJ-icV" secondAttribute="bottom" id="LCN-YS-uPF"/>
+                            <constraint firstItem="1I5-cJ-icV" firstAttribute="trailing" secondItem="lO1-Lq-3c2" secondAttribute="trailing" id="Uap-fk-kJb"/>
+                            <constraint firstItem="rlg-Vf-POr" firstAttribute="top" secondItem="lO1-Lq-3c2" secondAttribute="top" id="XZj-Yd-aIw"/>
+                            <constraint firstItem="v0I-Tf-upS" firstAttribute="leading" secondItem="lO1-Lq-3c2" secondAttribute="leading" id="bhJ-EI-gyL"/>
+                            <constraint firstItem="1I5-cJ-icV" firstAttribute="leading" secondItem="lO1-Lq-3c2" secondAttribute="leading" id="gNT-Bf-FjO"/>
+                            <constraint firstItem="lO1-Lq-3c2" firstAttribute="trailing" secondItem="rlg-Vf-POr" secondAttribute="trailing" id="lC6-j4-LT3"/>
+                            <constraint firstItem="rlg-Vf-POr" firstAttribute="leading" secondItem="lO1-Lq-3c2" secondAttribute="leading" id="pyS-h4-pkC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="expenseCollectionView" destination="1I5-cJ-icV" id="N9r-PJ-3y0"/>
+                        <outlet property="labelAddCategoryExpense" destination="xuj-tb-PPy" id="0wL-8y-MWM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7B-uH-bVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
