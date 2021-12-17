@@ -12,7 +12,8 @@ import UIKit
 protocol MainPageViewProtocol: AnyObject {
     func tableReloadDataExpenseOrGain()
     func tableReloadDataAccounts()
-
+    func tableReloadDataDate()
+    
 }
 
 class MainPageViewController: UIViewController {
@@ -24,10 +25,6 @@ class MainPageViewController: UIViewController {
     @IBOutlet private weak var buttonGain: UIButton!
     
     
-    
-    let arrayText: [String] = ["Bank", "Nalik"]
-    let arrayValue: [Int] = [100, 95]
-    
     var presenter: MainPagePresenterProtocol = MainPagePresenter()
     
     override func viewDidLoad() {
@@ -38,34 +35,41 @@ class MainPageViewController: UIViewController {
         presenter.view = self
         presenter.viewDidLoad()
         
+        
         tableViewAccounts.register(UINib(nibName: "MyCellView", bundle: Bundle.main), forCellReuseIdentifier: "MyCellView")
-        tableViewAccounts.register(UINib(nibName: "MyCellExpence", bundle: Bundle.main), forCellReuseIdentifier: "MyCellExpence")
-        tableViewAccounts.register(UINib(nibName: "MyCellGain", bundle: Bundle.main), forCellReuseIdentifier: "MyCellGain")
-        tableViewAccounts.register(UINib(nibName: "MyCellDate", bundle: Bundle.main), forCellReuseIdentifier: "MyCellDate")
+        
+        tableViewExpenseOrGain.register(UINib(nibName: "MyCellExpence", bundle: Bundle.main), forCellReuseIdentifier: "MyCellExpence")
+        
+        tableViewExpenseOrGain.register(UINib(nibName: "MyCellGain", bundle: Bundle.main), forCellReuseIdentifier: "MyCellGain")
+        
+        tableViewDate.register(UINib(nibName: "MyCellDate", bundle: Bundle.main), forCellReuseIdentifier: "MyCellDate")
+        
         
     }
     
-    func categoryName(for indexPath: IndexPath) -> String {
-        return arrayText[indexPath.row]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-    }
-    
-    func categoryValue(for indexPath: IndexPath) -> Int {
-        return arrayValue[indexPath.row]
+                presenter.loadingCoreDataModels()
+
+        presenter.calendarDate()
+        presenter.reloadTableViewAccounts()
+        presenter.reloadTableViewExpenseOrGain()
+        
         
     }
     
     @IBAction private func pressButtonExpence() {
         buttonExpense.isHidden = true
         buttonGain.isHidden = false
-        tableViewExpenseOrGain.reloadData()
-
+        presenter.reloadTableViewExpenseOrGain()
+        
     }
     
     @IBAction private func pressButtonGain() {
         buttonGain.isHidden = true
         buttonExpense.isHidden = false
-        tableViewExpenseOrGain.reloadData()
+        presenter.reloadTableViewExpenseOrGain()
     }
     
     @IBAction private func openMenuButton() {
@@ -84,21 +88,33 @@ extension MainPageViewController: MainPageViewProtocol {
     func tableReloadDataExpenseOrGain() {
         tableViewExpenseOrGain.reloadData()
     }
-
+    
+    func tableReloadDataDate() {
+        tableViewDate.reloadData()
+    }
     
     
     
-    
-    
-    
-    
+    // либо через enum сделат смену доход расходов
     
 }
 
 
 extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayText.count
+        switch tableView {
+        case tableViewAccounts:
+            return presenter.countElementsAccounts()
+        case tableViewExpenseOrGain:
+            if buttonGain.isHidden == true {
+                return presenter.countElementsExpenses()
+            } else {
+                return presenter.countElementsGains()
+            }
+        case tableViewDate:
+            return presenter.countElementsDate()
+        default: return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,35 +124,39 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableViewAccounts.dequeueReusableCell(withIdentifier: "MyCellView", for: indexPath) as? MyCellView else {
                 return UITableViewCell()
             }
-            cell.update(text: categoryName(for: indexPath), value: categoryValue(for: indexPath))
+            cell.update(text: presenter.returnElementFromAccounts(for: indexPath).nameAccount, value: presenter.returnElementFromAccounts(for: indexPath).value)
             return cell
         case tableViewExpenseOrGain:
             if buttonGain.isHidden == true {
-            guard let cell = tableViewAccounts.dequeueReusableCell(withIdentifier: "MyCellExpence", for: indexPath) as? MyCellExpence else {
-                return UITableViewCell()
-            }
-            cell.update(text: categoryName(for: indexPath), value: categoryValue(for: indexPath))
-            return cell
-            } else {
-                guard let cell = tableViewAccounts.dequeueReusableCell(withIdentifier: "MyCellGain", for: indexPath) as? MyCellGain else {
+                guard let cell = tableViewExpenseOrGain.dequeueReusableCell(withIdentifier: "MyCellExpence", for: indexPath) as? MyCellExpence else {
                     return UITableViewCell()
                 }
-                cell.update(text: categoryName(for: indexPath), value: categoryValue(for: indexPath))
+                cell.update(text: presenter.returnElementFromExpenses(for: indexPath).nameExpense, value: presenter.returnElementFromExpenses(for: indexPath).value)
+                return cell
+            } else {
+                
+                guard let cell = tableViewExpenseOrGain.dequeueReusableCell(withIdentifier: "MyCellGain", for: indexPath) as? MyCellGain else {
+                    return UITableViewCell()
+                }
+                cell.update(text: presenter.returnElementFromGains(for: indexPath).nameGain, value: presenter.returnElementFromGains(for: indexPath).value)
                 return cell
             }
+            
         case tableViewDate:
-            guard let cell = tableViewAccounts.dequeueReusableCell(withIdentifier: "MyCellDate", for: indexPath) as? MyCellDate else {
+            guard let cell = tableViewDate.dequeueReusableCell(withIdentifier: "MyCellDate", for: indexPath) as? MyCellDate else {
                 return UITableViewCell()
             }
-            cell.update(date: "03 сент", day: "Сегодня")
+            cell.update(date: presenter.returnElementFromDate(for: indexPath))
             return cell
+            
         default:
             return UITableViewCell()
         }
+        
+        
+        
     }
-    
-    
-    
-    
-    
 }
+
+
+

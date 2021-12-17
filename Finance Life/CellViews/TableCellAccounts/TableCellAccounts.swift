@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 
 class TableCellAccounts: UITableViewCell {
-    @IBOutlet private weak var nameForAccount: UILabel!
     @IBOutlet private weak var valueForAccount: UILabel!
+    @IBOutlet private weak var updateNameForAccount: UILabel!
     
     func update(name: String, value: String) {
-        nameForAccount.text = name
         valueForAccount.text = value
+        updateNameForAccount.text = name
+        
     }
 
     

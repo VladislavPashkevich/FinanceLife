@@ -68,7 +68,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="addNewAccount" destination="t4g-Qi-m8E" eventType="touchUpInside" id="gih-xf-dNL"/>
+                                            <action selector="addNewAccount" destination="t4g-Qi-m8E" eventType="touchUpInside" id="zbJ-cW-Bam"/>
                                         </connections>
                                     </button>
                                 </subviews>

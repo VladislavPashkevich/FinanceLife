@@ -104,7 +104,7 @@ extension ExpensesPageViewController: UICollectionViewDelegate, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellExpense", for: indexPath) as? CollectionCellExpense else {
             return UICollectionViewCell()
         }
-        cell.update(text: presenter.returnElementFromExpenses(for: indexPath))
+        cell.update(text: presenter.returnElementFromExpenses(for: indexPath).nameExpense)
         
         return cell
     }
@@ -121,7 +121,7 @@ extension ExpensesPageViewController: UICollectionViewDelegate, UICollectionView
             renameAlert.addAction(UIAlertAction(title: "OK", style: .default) { [weak self] _ in
                 guard let self = self,
                       let newNameExpense = renameAlert.textFields?.first?.text else {return}
-                expanses.expense = newNameExpense
+                expanses.nameExpense = newNameExpense
                 
                 self.expenseCollectionView.reloadData() })
             

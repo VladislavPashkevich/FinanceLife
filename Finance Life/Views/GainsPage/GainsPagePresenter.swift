@@ -17,7 +17,7 @@ protocol GainsPagePresenterProtocol {
     func addNewGain(gain: String)
     func removeGainElement(for indexPath: IndexPath)
     func countElementsGains() -> Int
-    func returnElementFromGains(for indexPath: IndexPath) -> String
+    func returnElementFromGains(for indexPath: IndexPath) -> Gains
     
 }
 
@@ -25,12 +25,13 @@ class GainsPagePresenter: GainsPagePresenterProtocol {
 
     weak var view: GainsPageViewProtocol?
     
-    private var gains: [CategoryGain] = []
+    private var gains: [Gains] = []
 
     func viewDidLoad() {
         
+        
         DatabaseService.shared.entitiesFor(
-            type: CategoryGain.self,
+            type: Gains.self,
             context: DatabaseService.shared.persistentContainer.mainContext,
             closure: { [weak self] coreDataGains in
                 guard let self =  self else { return }
@@ -48,11 +49,14 @@ class GainsPagePresenter: GainsPagePresenterProtocol {
     
     func addNewGain(gain: String) {
         DatabaseService.shared.insertEntityFor(
-            type: CategoryGain.self,
+            type: Gains.self,
             context: DatabaseService.shared.persistentContainer.mainContext,
             closure: { [weak self] coreDataGains in
                 guard let self =  self else { return }
-                coreDataGains.gain = gain
+                coreDataGains.nameGain = gain
+                coreDataGains.value = 0
+                let date = Date()
+                coreDataGains.date = date
                 
                 DatabaseService.shared.saveMain({
                     self.gains.append(coreDataGains)
@@ -85,7 +89,7 @@ class GainsPagePresenter: GainsPagePresenterProtocol {
         return gains.count
     }
     
-    func returnElementFromGains(for indexPath: IndexPath) -> String {
-        return gains[indexPath.row].gain
+    func returnElementFromGains(for indexPath: IndexPath) -> Gains {
+        return gains[indexPath.row]
     }
 }

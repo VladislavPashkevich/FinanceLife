@@ -28,8 +28,9 @@ class AccountsPageViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.navigationBar.isHidden = false
-
+        navigationController?.navigationBar.tintColor = .white
 
         presenter.view = self
         presenter.viewDidLoad()
@@ -45,6 +46,10 @@ class AccountsPageViewController: UIViewController {
     }
     
     @IBAction private func addNewAccount() {
+        let storyboard = UIStoryboard(name: "AddAccountPage", bundle: Bundle.main)
+        guard let vcAddAccountPage = storyboard.instantiateViewController(withIdentifier: "AddAccountPageViewController") as? AddAccountPageViewController else { return }
+//        vcAddAccountPage.presenter.returnDelegate = self
+        navigationController?.pushViewController(vcAddAccountPage, animated: true)
         
     }
     
@@ -70,7 +75,7 @@ extension AccountsPageViewController: AccountsPageViewProtocol {
     
     
     func reloadData() {
-        tableViewAccounts.reloadData()
+        presenter.reloadData()
     }
 
 }
@@ -84,10 +89,14 @@ extension AccountsPageViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableViewAccounts.dequeueReusableCell(withIdentifier: "TableCellAccounts", for: indexPath) as? TableCellAccounts else {
             return UITableViewCell() }
         let account = presenter.returnElementFromAccounts(for: indexPath)
-        cell.update(name: account.nameAccount, value: String(account.value))
+        let valueString = NSNumber(value: account.value).stringValue
+        cell.update(name: "", value: valueString)
         
         return cell
-    } 
-    
+    }
     
 }
+
+
+
+

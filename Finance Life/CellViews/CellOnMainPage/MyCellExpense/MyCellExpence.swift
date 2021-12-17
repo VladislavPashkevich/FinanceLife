@@ -12,7 +12,7 @@ class MyCellExpence: UITableViewCell {
     @IBOutlet private weak var textLabelName: UILabel!
     @IBOutlet private weak var textLabelValue: UILabel!
     
-    func update(text: String, value: Int) {
+    func update(text: String, value: Double) {
         textLabelName.text = text
         textLabelValue.text = String(value)
     }

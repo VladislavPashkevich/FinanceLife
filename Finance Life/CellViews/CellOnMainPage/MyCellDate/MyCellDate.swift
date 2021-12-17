@@ -12,9 +12,9 @@ class MyCellDate: UITableViewCell {
     @IBOutlet private weak var textLabelDate: UILabel!
     @IBOutlet private weak var textLabelDay: UILabel!
      
-    func update(date: String, day: String) {
+    func update(date: String) {
         textLabelDate.text = date
-        textLabelDay.text = day
+//        textLabelDay.text = day
     }
 
     

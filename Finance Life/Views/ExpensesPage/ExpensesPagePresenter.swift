@@ -17,8 +17,8 @@ protocol ExpensesPagePresenterProtocol {
     func addNewExpense(expense: String)
     func removeExpenseElement(for indexPath: IndexPath)
     func countElementsExpenses() -> Int
-    func returnElementFromExpenses(for indexPath: IndexPath) -> String
-    func returnArrayElementExpenses() -> [CategoryExpense]
+    func returnElementFromExpenses(for indexPath: IndexPath) -> Expenses
+    func returnArrayElementExpenses() -> [Expenses]
     
 }
 
@@ -26,12 +26,12 @@ class ExpensesPagePresenter: ExpensesPagePresenterProtocol {
 
     weak var view: ExpensesPageViewProtocol?
     
-    private var expenses: [CategoryExpense] = []
+    private var expenses: [Expenses] = []
 
     func viewDidLoad() {
         
         DatabaseService.shared.entitiesFor(
-            type: CategoryExpense.self,
+            type: Expenses.self,
             context: DatabaseService.shared.persistentContainer.mainContext,
             closure: { [weak self] coreDataExpenses in
                 guard let self =  self else { return }
@@ -50,12 +50,15 @@ class ExpensesPagePresenter: ExpensesPagePresenterProtocol {
     
     func addNewExpense(expense: String) {
         DatabaseService.shared.insertEntityFor(
-            type: CategoryExpense.self,
+            type: Expenses.self,
             context: DatabaseService.shared.persistentContainer.mainContext,
             closure: { [weak self] coreDataExpenses in
                 guard let self =  self else { return }
-                coreDataExpenses.expense = expense
-                
+                coreDataExpenses.nameExpense = expense
+                coreDataExpenses.value = 0
+                let date = Date()
+                coreDataExpenses.date = date
+                                
                 DatabaseService.shared.saveMain({
                     self.expenses.append(coreDataExpenses)
                     self.view?.addNewExpense(to: IndexPath(
@@ -86,7 +89,7 @@ class ExpensesPagePresenter: ExpensesPagePresenterProtocol {
 
             })
             }
-    func returnArrayElementExpenses() -> [CategoryExpense] {
+    func returnArrayElementExpenses() -> [Expenses] {
         return expenses
     }
     
@@ -94,8 +97,8 @@ class ExpensesPagePresenter: ExpensesPagePresenterProtocol {
         return expenses.count
     }
     
-    func returnElementFromExpenses(for indexPath: IndexPath) -> String {
-        return expenses[indexPath.item].expense 
+    func returnElementFromExpenses(for indexPath: IndexPath) -> Expenses {
+        return expenses[indexPath.item]
     }
     
     

@@ -92,7 +92,7 @@ extension GainsPageViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableViewGains.dequeueReusableCell(withIdentifier: "TableCellGain", for: indexPath) as? TableCellGain else {
             return UITableViewCell()
         }
-        cell.update(text: presenter.returnElementFromGains(for: indexPath))
+        cell.update(text: presenter.returnElementFromGains(for: indexPath).nameGain)
         return cell
     }
     
