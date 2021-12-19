@@ -16,6 +16,7 @@ protocol MenuPageViewProtocol: AnyObject {
     func showGain()
     func showExpense()
     func showAccounts()
+    func backToMainScreen()
     
     
 }
@@ -67,7 +68,12 @@ extension MenuPageViewController: MenuPageViewProtocol {
     func showExpense() {
         let storyboard = UIStoryboard(name: "ExpensesPage", bundle: Bundle.main)
         guard let vcStatics = storyboard.instantiateViewController(withIdentifier: "ExpensesPageViewController") as? ExpensesPageViewController else { return }
-        navigationController?.pushViewController(vcStatics, animated: true)    }
+        navigationController?.pushViewController(vcStatics, animated: true)
+    }
+    
+    func backToMainScreen() {
+        navigationController?.popViewController(animated: true)
+    }
     
 }
 

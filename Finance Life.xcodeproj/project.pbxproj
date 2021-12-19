@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562F7920276DAFE800A522AD /* StaticsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F791D276DAFE800A522AD /* StaticsPageViewController.swift */; };
+		562F7921276DAFE800A522AD /* StaticsPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F791E276DAFE800A522AD /* StaticsPagePresenter.swift */; };
+		562F7922276DAFE800A522AD /* StaticsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562F791F276DAFE800A522AD /* StaticsPage.storyboard */; };
 		563A5A9D276483DF00390E52 /* AddAccountPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563A5A9A276483DF00390E52 /* AddAccountPage.storyboard */; };
 		563A5A9E276483DF00390E52 /* AddAccountPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A5A9B276483DF00390E52 /* AddAccountPagePresenter.swift */; };
 		563A5A9F276483DF00390E52 /* AddAccountPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A5A9C276483DF00390E52 /* AddAccountPageViewController.swift */; };
@@ -26,9 +29,6 @@
 		5659E64C275BAD2D0033BD42 /* MenuPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5659E649275BAD2D0033BD42 /* MenuPage.storyboard */; };
 		5659E64D275BAD2D0033BD42 /* MenuPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E64A275BAD2D0033BD42 /* MenuPagePresenter.swift */; };
 		5659E64E275BAD2D0033BD42 /* MenuPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E64B275BAD2D0033BD42 /* MenuPageViewController.swift */; };
-		5659E653275BFC810033BD42 /* StaticsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5659E650275BFC800033BD42 /* StaticsPage.storyboard */; };
-		5659E654275BFC810033BD42 /* StaticsPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E651275BFC800033BD42 /* StaticsPagePresenter.swift */; };
-		5659E655275BFC810033BD42 /* StaticsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E652275BFC800033BD42 /* StaticsPageViewController.swift */; };
 		5659E65B275C0C6C0033BD42 /* AccountsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5659E658275C0C6C0033BD42 /* AccountsPage.storyboard */; };
 		5659E65C275C0C6C0033BD42 /* AccountsPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E659275C0C6C0033BD42 /* AccountsPagePresenter.swift */; };
 		5659E65D275C0C6C0033BD42 /* AccountsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659E65A275C0C6C0033BD42 /* AccountsPageViewController.swift */; };
@@ -56,6 +56,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		562F791D276DAFE800A522AD /* StaticsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticsPageViewController.swift; path = "Finance Life/Views/StaticsPage/StaticsPageViewController.swift"; sourceTree = "<group>"; };
+		562F791E276DAFE800A522AD /* StaticsPagePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticsPagePresenter.swift; path = "Finance Life/Views/StaticsPage/StaticsPagePresenter.swift"; sourceTree = "<group>"; };
+		562F791F276DAFE800A522AD /* StaticsPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StaticsPage.storyboard; path = "Finance Life/Views/StaticsPage/StaticsPage.storyboard"; sourceTree = "<group>"; };
 		563A5A9A276483DF00390E52 /* AddAccountPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAccountPage.storyboard; sourceTree = "<group>"; };
 		563A5A9B276483DF00390E52 /* AddAccountPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountPagePresenter.swift; sourceTree = "<group>"; };
 		563A5A9C276483DF00390E52 /* AddAccountPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountPageViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +78,6 @@
 		5659E649275BAD2D0033BD42 /* MenuPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuPage.storyboard; sourceTree = "<group>"; };
 		5659E64A275BAD2D0033BD42 /* MenuPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPagePresenter.swift; sourceTree = "<group>"; };
 		5659E64B275BAD2D0033BD42 /* MenuPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPageViewController.swift; sourceTree = "<group>"; };
-		5659E650275BFC800033BD42 /* StaticsPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StaticsPage.storyboard; sourceTree = "<group>"; };
-		5659E651275BFC800033BD42 /* StaticsPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsPagePresenter.swift; sourceTree = "<group>"; };
-		5659E652275BFC800033BD42 /* StaticsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsPageViewController.swift; sourceTree = "<group>"; };
 		5659E658275C0C6C0033BD42 /* AccountsPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountsPage.storyboard; sourceTree = "<group>"; };
 		5659E659275C0C6C0033BD42 /* AccountsPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPagePresenter.swift; sourceTree = "<group>"; };
 		5659E65A275C0C6C0033BD42 /* AccountsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPageViewController.swift; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 			children = (
 				56D965DA275A722A000E8832 /* MainPage */,
 				5659E64F275BAD330033BD42 /* MenuPage */,
-				5659E656275BFC8F0033BD42 /* StaticsPage */,
 				5659E657275C0C400033BD42 /* AccountsPage */,
+				5659E656275BFC8F0033BD42 /* StaticsPage */,
 				5659E65E275C0CEE0033BD42 /* GainsPage */,
 				5659E665275C0D7C0033BD42 /* ExpensesPage */,
 			);
@@ -239,9 +239,9 @@
 		5659E656275BFC8F0033BD42 /* StaticsPage */ = {
 			isa = PBXGroup;
 			children = (
-				5659E650275BFC800033BD42 /* StaticsPage.storyboard */,
-				5659E651275BFC800033BD42 /* StaticsPagePresenter.swift */,
-				5659E652275BFC800033BD42 /* StaticsPageViewController.swift */,
+				562F791F276DAFE800A522AD /* StaticsPage.storyboard */,
+				562F791E276DAFE800A522AD /* StaticsPagePresenter.swift */,
+				562F791D276DAFE800A522AD /* StaticsPageViewController.swift */,
 			);
 			name = StaticsPage;
 			path = ../..;
@@ -411,11 +411,11 @@
 				56D965D3275A71F6000E8832 /* LaunchScreen.storyboard in Resources */,
 				563A5A9D276483DF00390E52 /* AddAccountPage.storyboard in Resources */,
 				5659E65B275C0C6C0033BD42 /* AccountsPage.storyboard in Resources */,
+				562F7922276DAFE800A522AD /* StaticsPage.storyboard in Resources */,
 				56D965D0275A71F6000E8832 /* Assets.xcassets in Resources */,
 				5659E662275C0D0B0033BD42 /* GainsPage.storyboard in Resources */,
 				5659E669275C0D9C0033BD42 /* ExpensesPage.storyboard in Resources */,
 				5659E62E275B8BEF0033BD42 /* MyCellDate.xib in Resources */,
-				5659E653275BFC810033BD42 /* StaticsPage.storyboard in Resources */,
 				5659E62A275B89370033BD42 /* MyCellGain.xib in Resources */,
 				5655FAD3275FF1EC005C7E76 /* CollectionCellExpense.xib in Resources */,
 				5659E621275B7D170033BD42 /* MyCellExpence.xib in Resources */,
@@ -437,6 +437,7 @@
 				56D965E9275A73D5000E8832 /* View+Extensions.swift in Sources */,
 				5659E65D275C0C6C0033BD42 /* AccountsPageViewController.swift in Sources */,
 				563A5AA12764E6F200390E52 /* String+Extensions.swift in Sources */,
+				562F7920276DAFE800A522AD /* StaticsPageViewController.swift in Sources */,
 				5659E64E275BAD2D0033BD42 /* MenuPageViewController.swift in Sources */,
 				5659E66E275D57610033BD42 /* TableCellGain.swift in Sources */,
 				56821995276D3385002BED19 /* Accountsl.swift in Sources */,
@@ -452,16 +453,15 @@
 				5655FAD1275FF1D6005C7E76 /* CollectionCellExpense.swift in Sources */,
 				56D965C4275A71F4000E8832 /* AppDelegate.swift in Sources */,
 				56D965E0275A726F000E8832 /* MainPageViewController.swift in Sources */,
-				5659E654275BFC810033BD42 /* StaticsPagePresenter.swift in Sources */,
 				5659E629275B89370033BD42 /* MyCellGain.swift in Sources */,
 				5659E64D275BAD2D0033BD42 /* MenuPagePresenter.swift in Sources */,
+				562F7921276DAFE800A522AD /* StaticsPagePresenter.swift in Sources */,
 				56D965C6275A71F4000E8832 /* SceneDelegate.swift in Sources */,
 				563A5A9E276483DF00390E52 /* AddAccountPagePresenter.swift in Sources */,
 				5659E65C275C0C6C0033BD42 /* AccountsPagePresenter.swift in Sources */,
 				5659E62C275B8BDA0033BD42 /* MyCellDate.swift in Sources */,
 				5682199A276D3385002BED19 /* Expenses.swift in Sources */,
 				56549CB927629EEE008DA82B /* TableCellAccounts.swift in Sources */,
-				5659E655275BFC810033BD42 /* StaticsPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

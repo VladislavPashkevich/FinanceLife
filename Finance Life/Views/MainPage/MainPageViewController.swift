@@ -82,15 +82,21 @@ class MainPageViewController: UIViewController {
 // MARK: Extension -
 extension MainPageViewController: MainPageViewProtocol {
     func tableReloadDataAccounts() {
-        tableViewAccounts.reloadData()
+        DispatchQueue.main.async {
+            self.tableViewAccounts.reloadData()
+        }
     }
     
     func tableReloadDataExpenseOrGain() {
-        tableViewExpenseOrGain.reloadData()
+        DispatchQueue.main.async {
+            self.tableViewExpenseOrGain.reloadData()
+        }
     }
     
     func tableReloadDataDate() {
-        tableViewDate.reloadData()
+        DispatchQueue.main.async {
+            self.tableViewDate.reloadData()
+        }
     }
     
     

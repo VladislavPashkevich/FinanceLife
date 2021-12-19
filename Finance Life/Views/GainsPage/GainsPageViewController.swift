@@ -54,6 +54,9 @@ class GainsPageViewController: UIViewController {
             self.presenter.addNewGain(gain: gain)
         }))
         
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+
+        
         self.present(alert, animated: true, completion: nil)
     }
 }

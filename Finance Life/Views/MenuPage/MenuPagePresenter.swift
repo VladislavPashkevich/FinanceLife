@@ -48,6 +48,8 @@ class MenuPagePresenter: MenuPagePresenterProtocol {
             view?.showGain()
         case .Расходы:
             view?.showExpense()
+        case .Главная:
+            view?.backToMainScreen()
         }
         
     }
@@ -56,7 +58,7 @@ class MenuPagePresenter: MenuPagePresenterProtocol {
 
 
 enum menuBar: String, CaseIterable {
-    case Статистика, Счета, Доходы, Расходы
+    case Главная, Статистика, Счета, Доходы, Расходы
 }
 
 

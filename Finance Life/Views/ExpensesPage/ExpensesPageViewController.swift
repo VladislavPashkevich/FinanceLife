@@ -136,6 +136,8 @@ extension ExpensesPageViewController: UICollectionViewDelegate, UICollectionView
             
         }))
         
+        questionAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
         present(questionAlert, animated: true, completion: nil)
     }
     
