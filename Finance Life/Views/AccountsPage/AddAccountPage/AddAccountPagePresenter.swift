@@ -13,6 +13,8 @@ import UIKit
 // MARK: Presenter -
 protocol AddAccountPagePresenterProtocol {
     var view: AddAccountPageViewProtocol? { get set }
+    
+    var delegate: UpdateAccountsDelegateProtocol? { get set }
     func viewDidLoad()
     
     func createNewAccount(account: String?, value: String?)
@@ -20,29 +22,25 @@ protocol AddAccountPagePresenterProtocol {
     func valueAccountTextFieldDidUpdateText(value: String?)
     func shouldChangeText(replacementString string: String, shouldChangeCharactersIn range: NSRange) -> Bool
     
-    func returnDelegate() -> UpdateAccounts?
     
     
 }
 
 class AddAccountPagePresenter: AddAccountPagePresenterProtocol {
+    var delegate: UpdateAccountsDelegateProtocol?
+    
     
     weak var view: AddAccountPageViewProtocol?
     
     private var nameDigit: String?
     private var valueDigit: Double?
-    
-    var delegateUpdate: UpdateAccounts?
-    
 
     
     func viewDidLoad() {
         
     }
     
-    func returnDelegate() -> UpdateAccounts? {
-        return delegateUpdate
-    }
+  
     
     func createNewAccount(account: String?, value: String?) {
         DatabaseService.shared.insertEntityFor(
@@ -55,7 +53,8 @@ class AddAccountPagePresenter: AddAccountPagePresenterProtocol {
                 coreDataAccounts.nameAccount = account
                 coreDataAccounts.value = value.toDouble() ?? 0
                 
-                self.delegateUpdate?.updateAccounts(data: coreDataAccounts)
+                self.delegate?.updateAccounts(data: coreDataAccounts)
+                
                 DatabaseService.shared.saveMain(nil)
             })
     }
@@ -90,7 +89,7 @@ class AddAccountPagePresenter: AddAccountPagePresenterProtocol {
 }
 
 // через презентер делегирование делать
-protocol UpdateAccounts {
+protocol UpdateAccountsDelegateProtocol {
     func updateAccounts(data: Accounts)
 }
 

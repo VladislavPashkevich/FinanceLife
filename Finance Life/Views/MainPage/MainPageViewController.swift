@@ -13,6 +13,7 @@ protocol MainPageViewProtocol: AnyObject {
     func tableReloadDataExpenseOrGain()
     func tableReloadDataAccounts()
     func tableReloadDataDate()
+    func showAddEventPage()
     
 }
 
@@ -35,7 +36,6 @@ class MainPageViewController: UIViewController {
         presenter.view = self
         presenter.viewDidLoad()
         
-        
         tableViewAccounts.register(UINib(nibName: "MyCellView", bundle: Bundle.main), forCellReuseIdentifier: "MyCellView")
         
         tableViewExpenseOrGain.register(UINib(nibName: "MyCellExpence", bundle: Bundle.main), forCellReuseIdentifier: "MyCellExpence")
@@ -49,9 +49,7 @@ class MainPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-                presenter.loadingCoreDataModels()
-
+        presenter.loadingCoreDataModels()
         presenter.calendarDate()
         presenter.reloadTableViewAccounts()
         presenter.reloadTableViewExpenseOrGain()
@@ -99,9 +97,13 @@ extension MainPageViewController: MainPageViewProtocol {
         }
     }
     
+    func showAddEventPage() {
+        let storyboard = UIStoryboard(name: "AddEventPage", bundle: Bundle.main)
+        guard let vcAddEventPage = storyboard.instantiateViewController(withIdentifier: "AddEventPageViewController") as? AddEventPageViewController else { return }
+        vcAddEventPage.presenter.elementForEvent(element: presenter.transmissionElement())
+        navigationController?.pushViewController(vcAddEventPage, animated: true)
+    }
     
-    
-    // либо через enum сделат смену доход расходов
     
 }
 
@@ -158,11 +160,35 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return UITableViewCell()
         }
-        
-        
+       
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        switch tableView {
+        case tableViewAccounts:
+            presenter.addDedicateAccount(dedicatedAccount: presenter.returnElementFromAccounts(for: indexPath))
+            presenter.showAddEventPage()
+        case tableViewExpenseOrGain:
+            if buttonGain.isHidden == true {
+                presenter.addDedicateExpense(dedicatedExpense: presenter.returnElementFromExpenses(for: indexPath))
+                presenter.showAddEventPage()
+            } else {
+                presenter.addDedicateGain(dedicatedGain: presenter.returnElementFromGains(for: indexPath))
+                presenter.showAddEventPage()
+            }
+        case tableViewDate:
+            presenter.addDedicateDate(dedicatedDate: presenter.returnElementFromDate(for: indexPath))
+            presenter.showAddEventPage()
+        default:
+            break
+        }
         
     }
 }
+
+
+
 
 
 

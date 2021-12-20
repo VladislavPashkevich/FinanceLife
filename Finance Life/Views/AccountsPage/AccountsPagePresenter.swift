@@ -10,7 +10,7 @@
 import Foundation
 
 // MARK: Presenter -
-protocol AccountsPagePresenterProtocol {
+protocol AccountsPagePresenterProtocol: UpdateAccountsDelegateProtocol {
 	var view: AccountsPageViewProtocol? { get set }
     func viewDidLoad()
     
@@ -31,24 +31,22 @@ class AccountsPagePresenter: AccountsPagePresenterProtocol {
 
     func viewDidLoad() {
         
-//        DatabaseService.shared.entitiesFor(
-//            type: Accounts.self,
-//            context: DatabaseService.shared.persistentContainer.mainContext,
-//            closure: { [weak self] coreDataAccounts in
-//                guard let self =  self else { return }
-//                self.accounts = coreDataAccounts
-//                self.view?.reloadData()
-//                if coreDataAccounts.isEmpty {
-//                    self.view?.labelAddCategoryAccountHiddenFalse()
-//                } else {
-//                    self.view?.labelAddCategoryAccountHiddenTrue()
-//                }
-//            }
-//        )
+        DatabaseService.shared.entitiesFor(
+            type: Accounts.self,
+            context: DatabaseService.shared.persistentContainer.mainContext,
+            closure: { [weak self] coreDataAccounts in
+                guard let self =  self else { return }
+                self.accounts = coreDataAccounts
+                self.view?.reloadData()
+                if coreDataAccounts.isEmpty {
+                    self.view?.labelAddCategoryAccountHiddenFalse()
+                } else {
+                    self.view?.labelAddCategoryAccountHiddenTrue()
+                }
+            }
+        )
         
-        
-        //когда вставляю загрузку из coredata виснет экран
-    }
+}
     
     
     func removeAccountElement(for indexPath: IndexPath) {
@@ -82,10 +80,10 @@ class AccountsPagePresenter: AccountsPagePresenterProtocol {
     
 }
 
-extension AccountsPagePresenter: UpdateAccounts {
+extension AccountsPagePresenter {
     func updateAccounts(data: Accounts) {
         
-        accounts.append(data)
+        self.accounts.append(data)
         view?.reloadData()
         
     }

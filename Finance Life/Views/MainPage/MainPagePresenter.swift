@@ -31,10 +31,17 @@ protocol MainPagePresenterProtocol {
     func countElementsDate() -> Int
     func returnElementFromDate(for indexPath: IndexPath) -> String
     
+    func showAddEventPage()
+    func addDedicateAccount(dedicatedAccount: Accounts)
+    func addDedicateExpense(dedicatedExpense: Expenses)
+    func addDedicateGain(dedicatedGain: Gains)
+    func addDedicateDate(dedicatedDate: String)
+    func transmissionElement() -> AddNewEvent
+
+    
 }
 
 class MainPagePresenter: MainPagePresenterProtocol {
-    
 
     weak var view: MainPageViewProtocol?
     
@@ -43,17 +50,35 @@ class MainPagePresenter: MainPagePresenterProtocol {
     private var accounts: [Accounts] = []
     private var date: [Date] = []
     
+    
+    private var eventInfo = AddNewEvent()
 
     func viewDidLoad() {
         
-       
-        
+    }
     
-
+    func addDedicateAccount(dedicatedAccount: Accounts) {
+        eventInfo.account = dedicatedAccount
+    }
+    
+    func addDedicateExpense(dedicatedExpense: Expenses) {
+        eventInfo.expense = dedicatedExpense
+    }
+    
+    func addDedicateGain(dedicatedGain: Gains) {
+        eventInfo.gain = dedicatedGain
+    }
+    
+    func addDedicateDate(dedicatedDate: String) {
+        eventInfo.date = dedicatedDate
     }
     
     func reloadTableViewExpenseOrGain() {
         view?.tableReloadDataExpenseOrGain()
+    }
+    
+    func transmissionElement() -> AddNewEvent {
+        return eventInfo
     }
     
 
@@ -162,13 +187,30 @@ class MainPagePresenter: MainPagePresenterProtocol {
             
             gruop.wait()
             
-            print(self.gains, self.expenses, self.accounts)
-
             
             self.view?.tableReloadDataAccounts()
             self.view?.tableReloadDataExpenseOrGain()
             
         }
+        
+        
+        
+    }
+    
+    func showAddEventPage() {
+        if eventInfo.account != nil && eventInfo.expense != nil && eventInfo.date != nil {
+            view?.showAddEventPage()
+            eventInfo.account = nil
+            eventInfo.expense = nil
+            eventInfo.date = nil
+        } else if eventInfo.account != nil && eventInfo.gain != nil && eventInfo.date != nil {
+            view?.showAddEventPage()
+            eventInfo.account = nil
+            eventInfo.gain = nil
+            eventInfo.date = nil
+        }
+        
+        
         
         
         
@@ -183,7 +225,19 @@ class MainPagePresenter: MainPagePresenterProtocol {
     
     
     
+    
+    
+    
   
+}
+
+struct AddNewEvent {
+    var account: Accounts?
+    var expense: Expenses?
+    var gain: Gains?
+    var date: String?
+
+    
 }
 
 

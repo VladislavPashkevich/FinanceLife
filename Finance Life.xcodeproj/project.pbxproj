@@ -10,6 +10,9 @@
 		562F7920276DAFE800A522AD /* StaticsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F791D276DAFE800A522AD /* StaticsPageViewController.swift */; };
 		562F7921276DAFE800A522AD /* StaticsPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F791E276DAFE800A522AD /* StaticsPagePresenter.swift */; };
 		562F7922276DAFE800A522AD /* StaticsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562F791F276DAFE800A522AD /* StaticsPage.storyboard */; };
+		562F7926276F4C2300A522AD /* AddEventPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562F7923276F4C2300A522AD /* AddEventPage.storyboard */; };
+		562F7927276F4C2300A522AD /* AddEventPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F7924276F4C2300A522AD /* AddEventPagePresenter.swift */; };
+		562F7928276F4C2300A522AD /* AddEventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F7925276F4C2300A522AD /* AddEventPageViewController.swift */; };
 		563A5A9D276483DF00390E52 /* AddAccountPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563A5A9A276483DF00390E52 /* AddAccountPage.storyboard */; };
 		563A5A9E276483DF00390E52 /* AddAccountPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A5A9B276483DF00390E52 /* AddAccountPagePresenter.swift */; };
 		563A5A9F276483DF00390E52 /* AddAccountPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A5A9C276483DF00390E52 /* AddAccountPageViewController.swift */; };
@@ -42,7 +45,7 @@
 		5659E670275D576E0033BD42 /* TableCellGain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659E66F275D576E0033BD42 /* TableCellGain.xib */; };
 		56821982276D322A002BED19 /* Finance_Life.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56821980276D322A002BED19 /* Finance_Life.xcdatamodeld */; };
 		56821995276D3385002BED19 /* Accountsl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682198F276D3385002BED19 /* Accountsl.swift */; };
-		56821999276D3385002BED19 /* Gains+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56821993276D3385002BED19 /* Gains+CoreDataClass.swift */; };
+		56821999276D3385002BED19 /* Gains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56821993276D3385002BED19 /* Gains.swift */; };
 		5682199A276D3385002BED19 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56821994276D3385002BED19 /* Expenses.swift */; };
 		56D965C4275A71F4000E8832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965C3275A71F4000E8832 /* AppDelegate.swift */; };
 		56D965C6275A71F4000E8832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965C5275A71F4000E8832 /* SceneDelegate.swift */; };
@@ -59,6 +62,9 @@
 		562F791D276DAFE800A522AD /* StaticsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticsPageViewController.swift; path = "Finance Life/Views/StaticsPage/StaticsPageViewController.swift"; sourceTree = "<group>"; };
 		562F791E276DAFE800A522AD /* StaticsPagePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticsPagePresenter.swift; path = "Finance Life/Views/StaticsPage/StaticsPagePresenter.swift"; sourceTree = "<group>"; };
 		562F791F276DAFE800A522AD /* StaticsPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StaticsPage.storyboard; path = "Finance Life/Views/StaticsPage/StaticsPage.storyboard"; sourceTree = "<group>"; };
+		562F7923276F4C2300A522AD /* AddEventPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEventPage.storyboard; sourceTree = "<group>"; };
+		562F7924276F4C2300A522AD /* AddEventPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPagePresenter.swift; sourceTree = "<group>"; };
+		562F7925276F4C2300A522AD /* AddEventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPageViewController.swift; sourceTree = "<group>"; };
 		563A5A9A276483DF00390E52 /* AddAccountPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAccountPage.storyboard; sourceTree = "<group>"; };
 		563A5A9B276483DF00390E52 /* AddAccountPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountPagePresenter.swift; sourceTree = "<group>"; };
 		563A5A9C276483DF00390E52 /* AddAccountPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountPageViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +97,7 @@
 		5659E66F275D576E0033BD42 /* TableCellGain.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableCellGain.xib; sourceTree = "<group>"; };
 		56821981276D322A002BED19 /* Finance Life.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finance Life.xcdatamodel"; sourceTree = "<group>"; };
 		5682198F276D3385002BED19 /* Accountsl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Accountsl.swift; path = "Finance Life/Accountsl.swift"; sourceTree = SOURCE_ROOT; };
-		56821993276D3385002BED19 /* Gains+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Gains+CoreDataClass.swift"; path = "Finance Life/Gains+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		56821993276D3385002BED19 /* Gains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gains.swift; path = "Finance Life/Gains.swift"; sourceTree = SOURCE_ROOT; };
 		56821994276D3385002BED19 /* Expenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expenses.swift; path = "Finance Life/Expenses.swift"; sourceTree = SOURCE_ROOT; };
 		56D965C0275A71F4000E8832 /* Finance Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finance Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D965C3275A71F4000E8832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		562F7929276F4C2E00A522AD /* AddEventPage */ = {
+			isa = PBXGroup;
+			children = (
+				562F7923276F4C2300A522AD /* AddEventPage.storyboard */,
+				562F7924276F4C2300A522AD /* AddEventPagePresenter.swift */,
+				562F7925276F4C2300A522AD /* AddEventPageViewController.swift */,
+			);
+			path = AddEventPage;
+			sourceTree = "<group>";
+		};
 		563A5A99276483A000390E52 /* AddAccountPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +152,7 @@
 				5659E656275BFC8F0033BD42 /* StaticsPage */,
 				5659E65E275C0CEE0033BD42 /* GainsPage */,
 				5659E665275C0D7C0033BD42 /* ExpensesPage */,
+				562F7929276F4C2E00A522AD /* AddEventPage */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,7 +238,7 @@
 			children = (
 				5682198F276D3385002BED19 /* Accountsl.swift */,
 				56821994276D3385002BED19 /* Expenses.swift */,
-				56821993276D3385002BED19 /* Gains+CoreDataClass.swift */,
+				56821993276D3385002BED19 /* Gains.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -420,6 +437,7 @@
 				5655FAD3275FF1EC005C7E76 /* CollectionCellExpense.xib in Resources */,
 				5659E621275B7D170033BD42 /* MyCellExpence.xib in Resources */,
 				56549CBB27629EFC008DA82B /* TableCellAccounts.xib in Resources */,
+				562F7926276F4C2300A522AD /* AddEventPage.storyboard in Resources */,
 				5659E61A275AC9660033BD42 /* MyCellView.xib in Resources */,
 				5659E670275D576E0033BD42 /* TableCellGain.xib in Resources */,
 			);
@@ -436,13 +454,14 @@
 				56D965E2275A7374000E8832 /* CoreDataService.swift in Sources */,
 				56D965E9275A73D5000E8832 /* View+Extensions.swift in Sources */,
 				5659E65D275C0C6C0033BD42 /* AccountsPageViewController.swift in Sources */,
+				562F7928276F4C2300A522AD /* AddEventPageViewController.swift in Sources */,
 				563A5AA12764E6F200390E52 /* String+Extensions.swift in Sources */,
 				562F7920276DAFE800A522AD /* StaticsPageViewController.swift in Sources */,
 				5659E64E275BAD2D0033BD42 /* MenuPageViewController.swift in Sources */,
 				5659E66E275D57610033BD42 /* TableCellGain.swift in Sources */,
 				56821995276D3385002BED19 /* Accountsl.swift in Sources */,
 				563A5A9F276483DF00390E52 /* AddAccountPageViewController.swift in Sources */,
-				56821999276D3385002BED19 /* Gains+CoreDataClass.swift in Sources */,
+				56821999276D3385002BED19 /* Gains.swift in Sources */,
 				5659E66A275C0D9C0033BD42 /* ExpensesPagePresenter.swift in Sources */,
 				56821982276D322A002BED19 /* Finance_Life.xcdatamodeld in Sources */,
 				56D965DF275A726F000E8832 /* MainPagePresenter.swift in Sources */,
@@ -458,6 +477,7 @@
 				562F7921276DAFE800A522AD /* StaticsPagePresenter.swift in Sources */,
 				56D965C6275A71F4000E8832 /* SceneDelegate.swift in Sources */,
 				563A5A9E276483DF00390E52 /* AddAccountPagePresenter.swift in Sources */,
+				562F7927276F4C2300A522AD /* AddEventPagePresenter.swift in Sources */,
 				5659E65C275C0C6C0033BD42 /* AccountsPagePresenter.swift in Sources */,
 				5659E62C275B8BDA0033BD42 /* MyCellDate.swift in Sources */,
 				5682199A276D3385002BED19 /* Expenses.swift in Sources */,

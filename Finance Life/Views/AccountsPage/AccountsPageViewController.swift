@@ -29,14 +29,19 @@ class AccountsPageViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.tintColor = .white
 
         presenter.view = self
         presenter.viewDidLoad()
         
         tableViewAccounts.register(UINib(nibName: "TableCellAccounts", bundle: Bundle.main), forCellReuseIdentifier: "TableCellAccounts")
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.tintColor = .white
+        presenter.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,7 +53,7 @@ class AccountsPageViewController: UIViewController {
     @IBAction private func addNewAccount() {
         let storyboard = UIStoryboard(name: "AddAccountPage", bundle: Bundle.main)
         guard let vcAddAccountPage = storyboard.instantiateViewController(withIdentifier: "AddAccountPageViewController") as? AddAccountPageViewController else { return }
-//        vcAddAccountPage.presenter.returnDelegate = self
+        vcAddAccountPage.presenter.delegate = presenter
         navigationController?.pushViewController(vcAddAccountPage, animated: true)
         
     }
@@ -75,7 +80,7 @@ extension AccountsPageViewController: AccountsPageViewProtocol {
     
     
     func reloadData() {
-        presenter.reloadData()
+        tableViewAccounts.reloadData()
     }
 
 }
@@ -93,6 +98,18 @@ extension AccountsPageViewController: UITableViewDelegate, UITableViewDataSource
         cell.update(name: "", value: valueString)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let configuration = UISwipeActionsConfiguration(actions: [
+            UIContextualAction(
+                style: .destructive,
+                title: "Delete",
+                handler: { _, _, _ in
+                    self.presenter.removeAccountElement(for: indexPath)
+                })
+        ])
+        return configuration
     }
     
 }

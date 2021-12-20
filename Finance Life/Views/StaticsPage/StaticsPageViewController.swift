@@ -19,7 +19,9 @@ class StaticsPageViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.navigationBar.isHidden = false
+        
 
 
         presenter.view = self

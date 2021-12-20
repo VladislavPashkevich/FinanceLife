@@ -13,12 +13,13 @@ import Foundation
 protocol ExpensesPagePresenterProtocol {
 	var view: ExpensesPageViewProtocol? { get set }
     func viewDidLoad()
-    
+    func reloadCollectionViewData()
     func addNewExpense(expense: String)
     func removeExpenseElement(for indexPath: IndexPath)
     func countElementsExpenses() -> Int
     func returnElementFromExpenses(for indexPath: IndexPath) -> Expenses
     func returnArrayElementExpenses() -> [Expenses]
+    
     
 }
 
@@ -45,6 +46,10 @@ class ExpensesPagePresenter: ExpensesPagePresenterProtocol {
             }
         )
 
+    }
+    
+    func reloadCollectionViewData() {
+        view?.reloadCollectionView()
     }
     
     

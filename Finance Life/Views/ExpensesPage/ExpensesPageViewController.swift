@@ -121,9 +121,12 @@ extension ExpensesPageViewController: UICollectionViewDelegate, UICollectionView
             renameAlert.addAction(UIAlertAction(title: "OK", style: .default) { [weak self] _ in
                 guard let self = self,
                       let newNameExpense = renameAlert.textFields?.first?.text else {return}
-                expanses.nameExpense = newNameExpense
                 
-                self.expenseCollectionView.reloadData() })
+                expanses.nameExpense = newNameExpense
+                DatabaseService.shared.saveMain {
+                    self.presenter.reloadCollectionViewData()
+                }
+                 })
             
             self.present(renameAlert, animated: true, completion: nil)
             
