@@ -13,13 +13,16 @@ extension String {
     }
 }
 
-
-extension Date {
-    func dateToString() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_GB")
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
-        let dateInFormat = dateFormatter.string(from: self as Date)
-        return dateInFormat
+extension Dictionary where Value: Equatable {
+    func key(from value: Value) -> Key? {
+        return self.first(where: { $0.value == value })?.key
     }
 }
+
+//print(someDictionary.key(from: someValue)) // optional
+//
+//if let key = someDictionary.key(from: someValue) {
+//    print(key) // non-optional
+//}
+
+

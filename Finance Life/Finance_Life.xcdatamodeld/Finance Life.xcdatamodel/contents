@@ -4,6 +4,11 @@
         <attribute name="nameAccount" attributeType="String"/>
         <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="DataForReport" representedClassName="DataForReport" syncable="YES">
+        <attribute name="boolValue" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Expenses" representedClassName="Expenses" syncable="YES">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="nameExpense" attributeType="String"/>
@@ -15,8 +20,9 @@
         <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Gains" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="Expenses" positionX="-54" positionY="18" width="128" height="74"/>
         <element name="Accounts" positionX="-36" positionY="45" width="128" height="59"/>
+        <element name="Expenses" positionX="-54" positionY="18" width="128" height="74"/>
+        <element name="Gains" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="DataForReport" positionX="-45" positionY="27" width="128" height="74"/>
     </elements>
 </model>

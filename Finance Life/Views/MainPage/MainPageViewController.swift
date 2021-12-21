@@ -15,6 +15,8 @@ protocol MainPageViewProtocol: AnyObject {
     func tableReloadDataDate()
     func showAddEventPage()
     
+    func updateGeneralInfo(generalExpense: String, generalGain: String, totalBalance: String)
+    
 }
 
 class MainPageViewController: UIViewController {
@@ -24,6 +26,9 @@ class MainPageViewController: UIViewController {
     @IBOutlet private weak var tableViewExpenseOrGain: UITableView!
     @IBOutlet private weak var buttonExpense: UIButton!
     @IBOutlet private weak var buttonGain: UIButton!
+    @IBOutlet private weak var generalExpenseLabel: UILabel!
+    @IBOutlet private weak var generalGainLabel: UILabel!
+    @IBOutlet private weak var totalBalanceLabel: UILabel!
     
     
     var presenter: MainPagePresenterProtocol = MainPagePresenter()
@@ -55,6 +60,7 @@ class MainPageViewController: UIViewController {
         presenter.reloadTableViewExpenseOrGain()
         
         
+        
     }
     
     @IBAction private func pressButtonExpence() {
@@ -79,6 +85,13 @@ class MainPageViewController: UIViewController {
 }
 // MARK: Extension -
 extension MainPageViewController: MainPageViewProtocol {
+    func updateGeneralInfo(generalExpense: String, generalGain: String, totalBalance: String) {
+        DispatchQueue.main.async {
+            self.generalGainLabel.text = generalGain
+            self.generalExpenseLabel.text = generalExpense
+            self.totalBalanceLabel.text = totalBalance        }
+    }
+    
     func tableReloadDataAccounts() {
         DispatchQueue.main.async {
             self.tableViewAccounts.reloadData()

@@ -37,7 +37,10 @@ protocol MainPagePresenterProtocol {
     func addDedicateGain(dedicatedGain: Gains)
     func addDedicateDate(dedicatedDate: String)
     func transmissionElement() -> AddNewEvent
-
+    
+    func updateGeneralExpense() -> String
+    func updateGeneralGain() -> String
+    func updateTotalBalance() -> String
     
 }
 
@@ -55,6 +58,20 @@ class MainPagePresenter: MainPagePresenterProtocol {
 
     func viewDidLoad() {
         
+        
+    }
+    
+    func updateGeneralExpense() -> String {
+        return String(expenses.sum(\.value))
+    }
+    
+    func updateGeneralGain() -> String {
+        return String(gains.sum(\.value))
+    }
+    
+    func updateTotalBalance() -> String {
+        let totalBalance = gains.sum(\.value) - expenses.sum(\.value)
+        return String(totalBalance)
     }
     
     func addDedicateAccount(dedicatedAccount: Accounts) {
@@ -187,9 +204,9 @@ class MainPagePresenter: MainPagePresenterProtocol {
             
             gruop.wait()
             
-            
             self.view?.tableReloadDataAccounts()
             self.view?.tableReloadDataExpenseOrGain()
+            self.view?.updateGeneralInfo(generalExpense: String(self.expenses.sum(\.value)), generalGain: String(self.gains.sum(\.value)), totalBalance: String(self.gains.sum(\.value) - self.expenses.sum(\.value)))
             
         }
         

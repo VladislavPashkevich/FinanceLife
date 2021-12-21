@@ -47,10 +47,11 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4s-pC-8Zm">
                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="42"/>
                                                 <color key="backgroundColor" red="0.37931177770000002" green="0.33957675910000001" blue="0.026732627419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="709,26">
+                                                    <fragment content="0">
                                                         <attributes>
-                                                            <color key="NSColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="NSColor" red="0.87843137979999997" green="0.87843137979999997" blue="0.87843132020000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="40" name="Helvetica-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -89,7 +90,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xWh-8e-dtw">
                                                         <rect key="frame" x="0.0" y="29" width="187" height="21"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dF-U2-oh1">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dF-U2-oh1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="91" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
                                                                 <color key="textColor" red="0.43827339300000001" green="0.76859849690000004" blue="0.54616931440000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -128,7 +129,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qH8-VB-nvo">
                                                         <rect key="frame" x="0.0" y="31.5" width="187" height="18.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12a-Aj-pjs">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12a-Aj-pjs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="91" height="18.5"/>
                                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                                                 <color key="textColor" red="0.76942814179999997" green="0.32781633710000002" blue="0.28453275620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -384,9 +385,12 @@
                     <connections>
                         <outlet property="buttonExpense" destination="fjS-3n-obI" id="rAc-Jd-B04"/>
                         <outlet property="buttonGain" destination="97I-RH-rw5" id="2yz-Ft-y0W"/>
+                        <outlet property="generalExpenseLabel" destination="12a-Aj-pjs" id="rjM-3V-ukh"/>
+                        <outlet property="generalGainLabel" destination="9dF-U2-oh1" id="CG3-Mj-t5c"/>
                         <outlet property="tableViewAccounts" destination="cxF-U1-JSl" id="oBD-sQ-H07"/>
                         <outlet property="tableViewDate" destination="NoA-I7-khl" id="K4r-QG-CFJ"/>
                         <outlet property="tableViewExpenseOrGain" destination="BcC-Iu-ACY" id="DSA-tP-RGu"/>
+                        <outlet property="totalBalanceLabel" destination="d4s-pC-8Zm" id="iRy-Vs-VDo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7B-uH-bVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

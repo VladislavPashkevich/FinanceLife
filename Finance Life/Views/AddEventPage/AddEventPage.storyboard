@@ -159,13 +159,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="obO-gH-nqE">
-                                <rect key="frame" x="0.0" y="431" width="414" height="34"/>
+                                <rect key="frame" x="0.0" y="428.5" width="414" height="39.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите значение" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBH-R6-8f7">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="39.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="valueEventTextFieldDidChangeEditing" destination="1t2-l7-yzn" eventType="editingChanged" id="2tx-Au-ZcO"/>
@@ -173,7 +173,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BYN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sz6-D0-kxR">
-                                        <rect key="frame" x="365" y="0.0" width="49" height="34"/>
+                                        <rect key="frame" x="365" y="0.0" width="49" height="39.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,7 +183,7 @@
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqV-Gy-aIQ">
-                                <rect key="frame" x="30" y="485" width="354" height="34"/>
+                                <rect key="frame" x="30" y="488" width="354" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
