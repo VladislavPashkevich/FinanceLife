@@ -31,12 +31,17 @@ class StaticsPageViewController: UIViewController {
 
         presenter.view = self
         presenter.viewDidLoad()
+        
+        tableViewGruoped.register(UINib(nibName: "TableCellCtatics", bundle: Bundle.main), forCellReuseIdentifier: "TableCellCtatics")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         presenter.loadingCoreDataModels()
+        
+
+
     }
     
     
@@ -71,10 +76,25 @@ extension StaticsPageViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = presenter.returnDictionery(for: indexPath)
+        guard let cell = tableViewGruoped.dequeueReusableCell(withIdentifier: "TableCellCtatics", for: indexPath) as? TableCellCtatics else {
+            return UITableViewCell()
+        }
+        
+        cell.update(selectCell: presenter.returnDictioneryStruct(for: indexPath))
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        header.textLabel?.frame = header.frame
+        header.textLabel?.textAlignment = .center
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
     
 }

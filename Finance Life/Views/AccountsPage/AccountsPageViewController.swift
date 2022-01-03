@@ -94,8 +94,8 @@ extension AccountsPageViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableViewAccounts.dequeueReusableCell(withIdentifier: "TableCellAccounts", for: indexPath) as? TableCellAccounts else {
             return UITableViewCell() }
         let account = presenter.returnElementFromAccounts(for: indexPath)
-        let valueString = NSNumber(value: account.value).stringValue
-        cell.update(name: "", value: valueString)
+//        let valueString = NSNumber(value: account.value).stringValue
+        cell.update(name: account.nameAccount, value: String(account.value))
         
         return cell
     }

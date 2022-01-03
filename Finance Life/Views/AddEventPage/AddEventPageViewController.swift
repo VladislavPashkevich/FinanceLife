@@ -67,7 +67,7 @@ extension AddEventPageViewController: AddEventPageViewProtocol {
     func updateElementsOnView(element: AddNewEvent) {
         nameAccount.text = element.account?.nameAccount
         imageAccount.image = UIImage(systemName: "creditcard.fill")
-        dateLabel.text = element.date
+        dateLabel.text = element.date?.dateToString()
         if element.gain != nil {
             nameExpenseOrGain.text = element.gain?.nameGain
             imageExpenseOrGain.tintColor = .systemGreen

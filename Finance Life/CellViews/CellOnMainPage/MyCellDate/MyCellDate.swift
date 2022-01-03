@@ -12,8 +12,8 @@ class MyCellDate: UITableViewCell {
     @IBOutlet private weak var textLabelDate: UILabel!
     @IBOutlet private weak var textLabelDay: UILabel!
      
-    func update(date: String) {
-        textLabelDate.text = date
+    func update(date: Date) {
+        textLabelDate.text = date.dateToString()
 //        textLabelDay.text = day
     }
 

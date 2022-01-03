@@ -14,18 +14,15 @@ protocol StaticsPagePresenterProtocol {
 	var view: StaticsPageViewProtocol? { get set }
     func viewDidLoad()
     func loadingCoreDataModels()
-    func convertArrayToDictionaries()
     func countSections() -> Int
     func countRows(section: Int) -> Int
     func returnSectionsName(section: Int) -> String
-    func returnDictionery(for indexPath: IndexPath) -> String
+    func returnDictioneryStruct(for indexPath: IndexPath) -> [String : Bool]
 }
 
 class StaticsPagePresenter: StaticsPagePresenterProtocol {
     
-    
-    private var expenses: [Expenses] = []
-    private var gains: [Gains] = []
+    private var dataForReport: [DataForReport] = []
     
     private var generalDictionaryStruct: [TableObjects] = []
     
@@ -35,40 +32,7 @@ class StaticsPagePresenter: StaticsPagePresenterProtocol {
     func viewDidLoad() {
 
     }
-    
-    func convertArrayToDictionaries() {
-        var arrayDictionaryExpenses: [[String : String]] = []
-        var arrayDictionaryGains: [[String : String]] = []
 
-        for date in expenses {
-            let dictionary = [
-                date.date.dateToString() : String(date.value)
-            ]
-            arrayDictionaryExpenses.append(dictionary)
-        }
-        for date in gains {
-            let dictionary = [
-                date.date.dateToString() : String(date.value)
-            ]
-            arrayDictionaryGains.append(dictionary)
-        }
-        
-        let fullArray = arrayDictionaryGains + arrayDictionaryExpenses
-        
-        var resultDictionary = [String : [String]]()
-        for dict in fullArray {
-            for (key, value) in dict {
-                resultDictionary[key, default: []].append(value)
-            }
-        }
-        
-        for (key, value) in resultDictionary {
-            generalDictionaryStruct.append(TableObjects(sectionName: key, sectionObjects: value))
-        }
-        
-        view?.tableViewReloadData()
-                
-    }
     
     
     
@@ -85,55 +49,56 @@ class StaticsPagePresenter: StaticsPagePresenterProtocol {
         return generalDictionaryStruct[section].sectionName
     }
     
-    func returnDictionery(for indexPath: IndexPath) -> String {
+    func returnDictioneryStruct(for indexPath: IndexPath) -> [String : Bool] {
         return generalDictionaryStruct[indexPath.section].sectionObjects[indexPath.row]
     }
     
     func loadingCoreDataModels() {
+
+        DatabaseService.shared.entitiesFor(
+            type: DataForReport.self,
+            context: DatabaseService.shared.persistentContainer.mainContext,
+            closure: { [weak self] coreDataForReport in
+                guard let self = self else { return }
                 
-        let queue = DispatchQueue.global()
-        queue.async {
-            let gruop = DispatchGroup()
-            
-            gruop.enter()
-            
-            DatabaseService.shared.entitiesFor(
-                type: Gains.self,
-                context: DatabaseService.shared.persistentContainer.mainContext,
-                closure: { [weak self] coreDataGains in
-                    guard let self =  self else { return }
-                    self.gains = coreDataGains
-
-                    gruop.leave()
-
+                self.dataForReport = coreDataForReport
+                
+                var arrayDictionaries = [[String : [String : Bool]]]()
+                
+                self.dataForReport.sort(by: { currentItem, previosItem in
+                    currentItem.date > previosItem.date
+                })
+                let sortedDataPoints = self.dataForReport.sorted(by: { $0.date > $1.date })
+                print(sortedDataPoints)
+                for date in sortedDataPoints {
+                    let dictionary = [
+                        date.date.dateToString() : [String(date.value) : date.boolValue]
+                    ]
+                    arrayDictionaries.append(dictionary)
                 }
-            )
-            
-            
-            gruop.enter()
-            
-            DatabaseService.shared.entitiesFor(
-                type: Expenses.self,
-                context: DatabaseService.shared.persistentContainer.mainContext,
-                closure: { [weak self] coreDataExpenses in
-                    guard let self =  self else { return }
-                    self.expenses = coreDataExpenses
-
-                    gruop.leave()
-
+                
+                var resultDictionary = [String : [[String : Bool]]]()
+           
+                for dict in arrayDictionaries {
+                    for (key, value) in dict {
+                        resultDictionary[key, default: []].append(value)
+                    }
                 }
-            )
-   
-            gruop.wait()
-            
-            self.convertArrayToDictionaries()
-            
-            self.view?.tableViewReloadData()
-}
+                
+                
+                for (key, value) in resultDictionary {
+                    self.generalDictionaryStruct.append(TableObjects(sectionName: key, sectionObjects: value))
+                }
+
+                self.view?.tableViewReloadData()
+                
+            }
+        )
     }
 }
 
 struct TableObjects {
     var sectionName : String
-    var sectionObjects : [String]
+    var sectionObjects : [[String : Bool]]
 }
+    

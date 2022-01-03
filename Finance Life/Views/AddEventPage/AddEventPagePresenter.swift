@@ -28,6 +28,7 @@ class AddEventPagePresenter: AddEventPagePresenterProtocol {
         
     private var valueDigit: Double?
     private var updateElement: AddNewEvent?
+    private var dataForReport: [DataForReport] = []
 
     weak var view: AddEventPageViewProtocol?
 
@@ -73,11 +74,38 @@ class AddEventPagePresenter: AddEventPagePresenterProtocol {
             updateElement?.gain?.value += value
             updateElement?.account?.value += value
             DatabaseService.shared.saveMain(nil)
+            
+            DatabaseService.shared.insertEntityFor(
+                type: DataForReport.self,
+                context: DatabaseService.shared.persistentContainer.mainContext,
+                closure: { [weak self] coreDataForReport in
+                    guard let self = self,
+                          let date = self.updateElement?.date else { return }
+                    coreDataForReport.boolValue = true
+                    coreDataForReport.value = value
+                    coreDataForReport.date = date
+                    DatabaseService.shared.saveMain(nil)
+                })
         } else {
             updateElement?.expense?.value += value
             updateElement?.account?.value -= value
             DatabaseService.shared.saveMain(nil)
+            
+            DatabaseService.shared.insertEntityFor(
+                type: DataForReport.self,
+                context: DatabaseService.shared.persistentContainer.mainContext,
+                closure: { [weak self] coreDataForReport in
+                    guard let self = self,
+                          let date = self.updateElement?.date else { return }
+                    coreDataForReport.boolValue = false
+                    coreDataForReport.value = value
+                    coreDataForReport.date = date
+                    DatabaseService.shared.saveMain(nil)
+                })
         }
     }
 }
+
+
+
 

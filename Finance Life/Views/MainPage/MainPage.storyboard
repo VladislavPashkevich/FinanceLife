@@ -272,7 +272,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="pressButtonGain" destination="1t2-l7-yzn" eventType="touchUpInside" id="Y8P-nV-7Kv"/>
+                                                    <action selector="pressButtonGain" destination="1t2-l7-yzn" eventType="touchUpInside" id="psD-cg-zWb"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -383,8 +383,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="s7V-hC-rHh"/>
                     <connections>
+                        <outlet property="buttonAccount" destination="5LG-W3-cbG" id="dK1-NL-R8T"/>
                         <outlet property="buttonExpense" destination="fjS-3n-obI" id="rAc-Jd-B04"/>
-                        <outlet property="buttonGain" destination="97I-RH-rw5" id="2yz-Ft-y0W"/>
+                        <outlet property="buttonGain" destination="97I-RH-rw5" id="rpz-Op-Rfz"/>
                         <outlet property="generalExpenseLabel" destination="12a-Aj-pjs" id="rjM-3V-ukh"/>
                         <outlet property="generalGainLabel" destination="9dF-U2-oh1" id="CG3-Mj-t5c"/>
                         <outlet property="tableViewAccounts" destination="cxF-U1-JSl" id="oBD-sQ-H07"/>

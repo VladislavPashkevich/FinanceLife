@@ -15,6 +15,7 @@
 		562F7928276F4C2300A522AD /* AddEventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F7925276F4C2300A522AD /* AddEventPageViewController.swift */; };
 		562F794E2770B9D600A522AD /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F794D2770B9D600A522AD /* Date+Extensions.swift */; };
 		562F79502770B9FE00A522AD /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F794F2770B9FE00A522AD /* Sequence+Extensions.swift */; };
+		562F795C2771F27F00A522AD /* DataForReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F795B2771F27F00A522AD /* DataForReport.swift */; };
 		563A5A9D276483DF00390E52 /* AddAccountPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563A5A9A276483DF00390E52 /* AddAccountPage.storyboard */; };
 		563A5A9E276483DF00390E52 /* AddAccountPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A5A9B276483DF00390E52 /* AddAccountPagePresenter.swift */; };
 		563A5A9F276483DF00390E52 /* AddAccountPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A5A9C276483DF00390E52 /* AddAccountPageViewController.swift */; };
@@ -58,9 +59,14 @@
 		56D965E0275A726F000E8832 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965DD275A726F000E8832 /* MainPageViewController.swift */; };
 		56D965E2275A7374000E8832 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965E1275A7374000E8832 /* CoreDataService.swift */; };
 		56D965E9275A73D5000E8832 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D965E5275A73D5000E8832 /* View+Extensions.swift */; };
+		56EF11D127748486005488BB /* TableCellStatics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF11D027748486005488BB /* TableCellStatics.swift */; };
+		56EF11D32774849E005488BB /* TableCellCtatics.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56EF11D22774849E005488BB /* TableCellCtatics.xib */; };
+		B5C99A733AF6FBA4E65AB04B /* Pods_Finance_Life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A6A833F569B27B25963A33 /* Pods_Finance_Life.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11A6A833F569B27B25963A33 /* Pods_Finance_Life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance_Life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DEB4B4C852BC53CF959288E /* Pods-Finance Life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance Life.release.xcconfig"; path = "Target Support Files/Pods-Finance Life/Pods-Finance Life.release.xcconfig"; sourceTree = "<group>"; };
 		562F791D276DAFE800A522AD /* StaticsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticsPageViewController.swift; path = "Finance Life/Views/StaticsPage/StaticsPageViewController.swift"; sourceTree = "<group>"; };
 		562F791E276DAFE800A522AD /* StaticsPagePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticsPagePresenter.swift; path = "Finance Life/Views/StaticsPage/StaticsPagePresenter.swift"; sourceTree = "<group>"; };
 		562F791F276DAFE800A522AD /* StaticsPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StaticsPage.storyboard; path = "Finance Life/Views/StaticsPage/StaticsPage.storyboard"; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 		562F7925276F4C2300A522AD /* AddEventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPageViewController.swift; sourceTree = "<group>"; };
 		562F794D2770B9D600A522AD /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		562F794F2770B9FE00A522AD /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		562F795B2771F27F00A522AD /* DataForReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataForReport.swift; sourceTree = "<group>"; };
 		563A5A9A276483DF00390E52 /* AddAccountPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAccountPage.storyboard; sourceTree = "<group>"; };
 		563A5A9B276483DF00390E52 /* AddAccountPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountPagePresenter.swift; sourceTree = "<group>"; };
 		563A5A9C276483DF00390E52 /* AddAccountPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountPageViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +121,9 @@
 		56D965DD275A726F000E8832 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		56D965E1275A7374000E8832 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		56D965E5275A73D5000E8832 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		56EF11D027748486005488BB /* TableCellStatics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellStatics.swift; sourceTree = "<group>"; };
+		56EF11D22774849E005488BB /* TableCellCtatics.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableCellCtatics.xib; sourceTree = "<group>"; };
+		86E61E7068EFB86E3EC9FAEB /* Pods-Finance Life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance Life.debug.xcconfig"; path = "Target Support Files/Pods-Finance Life/Pods-Finance Life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C99A733AF6FBA4E65AB04B /* Pods_Finance_Life.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +208,7 @@
 				56549CB727629EBB008DA82B /* TableCellAccounts */,
 				5655FACF275FF0C9005C7E76 /* TableCellGain */,
 				5659E66C275D57030033BD42 /* CollectionCellExpense */,
+				56EF11CF277483B8005488BB /* TableCellStatics */,
 			);
 			path = CellViews;
 			sourceTree = "<group>";
@@ -240,6 +252,7 @@
 		5659E63B275B9C000033BD42 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				562F795B2771F27F00A522AD /* DataForReport.swift */,
 				5682198F276D3385002BED19 /* Accounts.swift */,
 				56821994276D3385002BED19 /* Expenses.swift */,
 				56821993276D3385002BED19 /* Gains.swift */,
@@ -313,6 +326,8 @@
 			children = (
 				56D965C2275A71F4000E8832 /* Finance Life */,
 				56D965C1275A71F4000E8832 /* Products */,
+				63565F3E39A33ACACC6E97D9 /* Pods */,
+				BDC1F9CB644EB3922C41A90B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -371,6 +386,32 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		56EF11CF277483B8005488BB /* TableCellStatics */ = {
+			isa = PBXGroup;
+			children = (
+				56EF11D027748486005488BB /* TableCellStatics.swift */,
+				56EF11D22774849E005488BB /* TableCellCtatics.xib */,
+			);
+			path = TableCellStatics;
+			sourceTree = "<group>";
+		};
+		63565F3E39A33ACACC6E97D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86E61E7068EFB86E3EC9FAEB /* Pods-Finance Life.debug.xcconfig */,
+				3DEB4B4C852BC53CF959288E /* Pods-Finance Life.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BDC1F9CB644EB3922C41A90B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11A6A833F569B27B25963A33 /* Pods_Finance_Life.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -378,9 +419,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56D965D7275A71F6000E8832 /* Build configuration list for PBXNativeTarget "Finance Life" */;
 			buildPhases = (
+				91B515137DFD7B6E52C90BC3 /* [CP] Check Pods Manifest.lock */,
 				56D965BC275A71F4000E8832 /* Sources */,
 				56D965BD275A71F4000E8832 /* Frameworks */,
 				56D965BE275A71F4000E8832 /* Resources */,
+				25DB582ABEA40517A198AFF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -429,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EF11D32774849E005488BB /* TableCellCtatics.xib in Resources */,
 				56D965DE275A726F000E8832 /* MainPage.storyboard in Resources */,
 				5659E64C275BAD2D0033BD42 /* MenuPage.storyboard in Resources */,
 				56D965D3275A71F6000E8832 /* LaunchScreen.storyboard in Resources */,
@@ -451,6 +495,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25DB582ABEA40517A198AFF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Finance Life/Pods-Finance Life-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Finance Life/Pods-Finance Life-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Finance Life/Pods-Finance Life-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91B515137DFD7B6E52C90BC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Finance Life-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56D965BC275A71F4000E8832 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -460,6 +546,7 @@
 				56D965E2275A7374000E8832 /* CoreDataService.swift in Sources */,
 				56D965E9275A73D5000E8832 /* View+Extensions.swift in Sources */,
 				5659E65D275C0C6C0033BD42 /* AccountsPageViewController.swift in Sources */,
+				56EF11D127748486005488BB /* TableCellStatics.swift in Sources */,
 				562F7928276F4C2300A522AD /* AddEventPageViewController.swift in Sources */,
 				563A5AA12764E6F200390E52 /* String+Extensions.swift in Sources */,
 				562F7920276DAFE800A522AD /* StaticsPageViewController.swift in Sources */,
@@ -468,6 +555,7 @@
 				5659E66E275D57610033BD42 /* TableCellGain.swift in Sources */,
 				56821995276D3385002BED19 /* Accounts.swift in Sources */,
 				563A5A9F276483DF00390E52 /* AddAccountPageViewController.swift in Sources */,
+				562F795C2771F27F00A522AD /* DataForReport.swift in Sources */,
 				56821999276D3385002BED19 /* Gains.swift in Sources */,
 				5659E66A275C0D9C0033BD42 /* ExpensesPagePresenter.swift in Sources */,
 				56821982276D322A002BED19 /* Finance_Life.xcdatamodeld in Sources */,
@@ -625,6 +713,7 @@
 		};
 		56D965D8275A71F6000E8832 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86E61E7068EFB86E3EC9FAEB /* Pods-Finance Life.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -653,6 +742,7 @@
 		};
 		56D965D9275A71F6000E8832 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DEB4B4C852BC53CF959288E /* Pods-Finance Life.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

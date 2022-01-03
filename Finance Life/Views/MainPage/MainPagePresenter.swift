@@ -29,18 +29,19 @@ protocol MainPagePresenterProtocol {
     func calendarDate()
     
     func countElementsDate() -> Int
-    func returnElementFromDate(for indexPath: IndexPath) -> String
+    func returnElementFromDate(for indexPath: IndexPath) -> Date
     
     func showAddEventPage()
     func addDedicateAccount(dedicatedAccount: Accounts)
     func addDedicateExpense(dedicatedExpense: Expenses)
     func addDedicateGain(dedicatedGain: Gains)
-    func addDedicateDate(dedicatedDate: String)
+    func addDedicateDate(dedicatedDate: Date)
     func transmissionElement() -> AddNewEvent
     
     func updateGeneralExpense() -> String
     func updateGeneralGain() -> String
-    func updateTotalBalance() -> String
+    func updateTotalBalance()
+    
     
 }
 
@@ -57,7 +58,9 @@ class MainPagePresenter: MainPagePresenterProtocol {
     private var eventInfo = AddNewEvent()
 
     func viewDidLoad() {
-        
+        view?.showProgressHud()
+        view?.longPressButtonAccount()
+
         
     }
     
@@ -69,9 +72,9 @@ class MainPagePresenter: MainPagePresenterProtocol {
         return String(gains.sum(\.value))
     }
     
-    func updateTotalBalance() -> String {
-        let totalBalance = gains.sum(\.value) - expenses.sum(\.value)
-        return String(totalBalance)
+    func updateTotalBalance() {
+        let totalBalance = String(self.accounts.sum(\.value))
+        view?.updateTotalBalance(totalBalance: totalBalance)
     }
     
     func addDedicateAccount(dedicatedAccount: Accounts) {
@@ -86,7 +89,7 @@ class MainPagePresenter: MainPagePresenterProtocol {
         eventInfo.gain = dedicatedGain
     }
     
-    func addDedicateDate(dedicatedDate: String) {
+    func addDedicateDate(dedicatedDate: Date) {
         eventInfo.date = dedicatedDate
     }
     
@@ -136,8 +139,8 @@ class MainPagePresenter: MainPagePresenterProtocol {
         return date.count
     }
     
-    func returnElementFromDate(for indexPath: IndexPath) -> String {
-        return date[indexPath.row].dateToString()
+    func returnElementFromDate(for indexPath: IndexPath) -> Date {
+        return date[indexPath.row]
     }
     
     func calendarDate() {
@@ -156,7 +159,7 @@ class MainPagePresenter: MainPagePresenterProtocol {
     }
     
     func loadingCoreDataModels() {
-                
+        
         let queue = DispatchQueue.global()
         queue.async {
             let gruop = DispatchGroup()
@@ -203,10 +206,14 @@ class MainPagePresenter: MainPagePresenterProtocol {
             
             
             gruop.wait()
-            
+            self.view?.hideProgressHud()
+                        
             self.view?.tableReloadDataAccounts()
             self.view?.tableReloadDataExpenseOrGain()
-            self.view?.updateGeneralInfo(generalExpense: String(self.expenses.sum(\.value)), generalGain: String(self.gains.sum(\.value)), totalBalance: String(self.gains.sum(\.value) - self.expenses.sum(\.value)))
+            self.view?.updateGeneralInfo(
+                generalExpense: String(self.expenses.sum(\.value)),
+                generalGain: String(self.gains.sum(\.value)),
+                totalBalance: String(self.accounts.sum(\.value)))
             
         }
         
@@ -252,7 +259,7 @@ struct AddNewEvent {
     var account: Accounts?
     var expense: Expenses?
     var gain: Gains?
-    var date: String?
+    var date: Date?
 
     
 }

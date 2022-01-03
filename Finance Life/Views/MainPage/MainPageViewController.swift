@@ -8,14 +8,22 @@
 //
 
 import UIKit
+import MBProgressHUD
+
 // MARK: View -
 protocol MainPageViewProtocol: AnyObject {
     func tableReloadDataExpenseOrGain()
     func tableReloadDataAccounts()
     func tableReloadDataDate()
     func showAddEventPage()
+    func showProgressHud()
+    func hideProgressHud()
+    func updateTotalBalance(totalBalance: String)
     
     func updateGeneralInfo(generalExpense: String, generalGain: String, totalBalance: String)
+    
+    func longPressButtonAccount()
+    
     
 }
 
@@ -29,6 +37,8 @@ class MainPageViewController: UIViewController {
     @IBOutlet private weak var generalExpenseLabel: UILabel!
     @IBOutlet private weak var generalGainLabel: UILabel!
     @IBOutlet private weak var totalBalanceLabel: UILabel!
+    @IBOutlet private weak var buttonAccount: UIButton!
+    
     
     
     var presenter: MainPagePresenterProtocol = MainPagePresenter()
@@ -37,6 +47,8 @@ class MainPageViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
         
         presenter.view = self
         presenter.viewDidLoad()
@@ -58,6 +70,7 @@ class MainPageViewController: UIViewController {
         presenter.calendarDate()
         presenter.reloadTableViewAccounts()
         presenter.reloadTableViewExpenseOrGain()
+        presenter.updateTotalBalance()
         
         
         
@@ -81,15 +94,46 @@ class MainPageViewController: UIViewController {
         guard let vcMenu = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as? MenuPageViewController else { return }
         navigationController?.pushViewController(vcMenu, animated: true)
     }
+    // MARK: Selector -
+    @objc func longPressButtonAccount(_ guesture: UILongPressGestureRecognizer) {
+        if guesture.state == UIGestureRecognizer.State.began {
+                let storyboard = UIStoryboard(name: "AccountsPage", bundle: Bundle.main)
+                guard let vcStatics = storyboard.instantiateViewController(withIdentifier: "AccountsPageViewController") as? AccountsPageViewController else { return }
+                navigationController?.pushViewController(vcStatics, animated: true)  
+            }
+            
+          }
+
     
 }
 // MARK: Extension -
 extension MainPageViewController: MainPageViewProtocol {
+    func longPressButtonAccount() {
+        let longPressAccount = UILongPressGestureRecognizer(target: self, action: #selector(longPressButtonAccount(_:)))
+        
+        buttonAccount.addGestureRecognizer(longPressAccount)
+    }
+    
+    func updateTotalBalance(totalBalance: String) {
+        self.totalBalanceLabel.text = totalBalance
+    }
+    
+    func showProgressHud() {
+        MBProgressHUD.showAdded(to: view, animated: true)
+    }
+    
+    func hideProgressHud() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+    
     func updateGeneralInfo(generalExpense: String, generalGain: String, totalBalance: String) {
         DispatchQueue.main.async {
             self.generalGainLabel.text = generalGain
             self.generalExpenseLabel.text = generalExpense
-            self.totalBalanceLabel.text = totalBalance        }
+            self.totalBalanceLabel.text = totalBalance
+        }
     }
     
     func tableReloadDataAccounts() {
@@ -116,6 +160,7 @@ extension MainPageViewController: MainPageViewProtocol {
         vcAddEventPage.presenter.elementForEvent(element: presenter.transmissionElement())
         navigationController?.pushViewController(vcAddEventPage, animated: true)
     }
+    
     
     
 }
@@ -198,6 +243,8 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
+    
+    
 }
 
 

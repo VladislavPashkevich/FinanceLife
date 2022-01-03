@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,9 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g97-9t-mbM">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="separatorColor" red="0.63107298160000003" green="0.64170122080000003" blue="0.1464969015" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="1t2-l7-yzn" id="3kf-sN-V0m"/>
                                     <outlet property="delegate" destination="1t2-l7-yzn" id="n9I-uP-Ebj"/>
@@ -27,10 +26,10 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lO1-Lq-3c2"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lO1-Lq-3c2" firstAttribute="trailing" secondItem="g97-9t-mbM" secondAttribute="trailing" id="CTQ-g9-L3H"/>
-                            <constraint firstItem="g97-9t-mbM" firstAttribute="top" secondItem="lO1-Lq-3c2" secondAttribute="top" id="Zkv-Hv-Lmh"/>
+                            <constraint firstItem="g97-9t-mbM" firstAttribute="top" secondItem="lO1-Lq-3c2" secondAttribute="top" constant="10" id="Zkv-Hv-Lmh"/>
                             <constraint firstAttribute="bottom" secondItem="g97-9t-mbM" secondAttribute="bottom" constant="34" id="i3b-zR-SqV"/>
                             <constraint firstItem="g97-9t-mbM" firstAttribute="leading" secondItem="lO1-Lq-3c2" secondAttribute="leading" id="pc4-GV-At0"/>
                             <constraint firstItem="lO1-Lq-3c2" firstAttribute="bottom" secondItem="g97-9t-mbM" secondAttribute="bottom" id="zEo-OQ-VUa"/>
@@ -45,12 +44,4 @@
             <point key="canvasLocation" x="112" y="89"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
